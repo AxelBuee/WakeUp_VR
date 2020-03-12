@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 22afed7c4fd6e43cb9ad4bf549995654
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Curtain_1
+    100002: Curtain_2
+    100004: Curtain_Rod
+    100006: Curtains
+    100008: Ring
+    100010: Ring1
+    100012: Ring2
+    100014: Ring3
+    100016: Ring4
+    100018: Ring5
+    100020: Rod
+    100022: Rod_Back_1
+    100024: Rod_Back_2
+    100026: Rod_End_1
+    100028: Rod_End_2
+    100030: //RootNode
+    100032: Window_Frame
+    100034: Window_Frame 1
+    100036: Window_Frame1
+    100038: Window_Frame10
+    100040: Window_Frame11
+    100042: Window_Frame2
+    100044: Window_Frame3
+    100046: Window_Frame4
+    100048: Window_Frame5
+    100050: Window_Frame6
+    100052: Window_Frame7
+    100054: Window_Frame8
+    100056: Window_Frame9
+    400000: Curtain_1
+    400002: Curtain_2
+    400004: Curtain_Rod
+    400006: Curtains
+    400008: Ring
+    400010: Ring1
+    400012: Ring2
+    400014: Ring3
+    400016: Ring4
+    400018: Ring5
+    400020: Rod
+    400022: Rod_Back_1
+    400024: Rod_Back_2
+    400026: Rod_End_1
+    400028: Rod_End_2
+    400030: //RootNode
+    400032: Window_Frame
+    400034: Window_Frame 1
+    400036: Window_Frame1
+    400038: Window_Frame10
+    400040: Window_Frame11
+    400042: Window_Frame2
+    400044: Window_Frame3
+    400046: Window_Frame4
+    400048: Window_Frame5
+    400050: Window_Frame6
+    400052: Window_Frame7
+    400054: Window_Frame8
+    400056: Window_Frame9
+    2100000: lambert1
+    2300000: Curtain_1
+    2300002: Curtain_2
+    2300004: Ring
+    2300006: Ring1
+    2300008: Ring2
+    2300010: Ring3
+    2300012: Ring4
+    2300014: Ring5
+    2300016: Rod
+    2300018: Rod_Back_1
+    2300020: Rod_Back_2
+    2300022: Rod_End_1
+    2300024: Rod_End_2
+    2300026: Window_Frame 1
+    2300028: Window_Frame1
+    2300030: Window_Frame10
+    2300032: Window_Frame11
+    2300034: Window_Frame2
+    2300036: Window_Frame3
+    2300038: Window_Frame4
+    2300040: Window_Frame5
+    2300042: Window_Frame6
+    2300044: Window_Frame7
+    2300046: Window_Frame8
+    2300048: Window_Frame9
+    3300000: Curtain_1
+    3300002: Curtain_2
+    3300004: Ring
+    3300006: Ring1
+    3300008: Ring2
+    3300010: Ring3
+    3300012: Ring4
+    3300014: Ring5
+    3300016: Rod
+    3300018: Rod_Back_1
+    3300020: Rod_Back_2
+    3300022: Rod_End_1
+    3300024: Rod_End_2
+    3300026: Window_Frame 1
+    3300028: Window_Frame1
+    3300030: Window_Frame10
+    3300032: Window_Frame11
+    3300034: Window_Frame2
+    3300036: Window_Frame3
+    3300038: Window_Frame4
+    3300040: Window_Frame5
+    3300042: Window_Frame6
+    3300044: Window_Frame7
+    3300046: Window_Frame8
+    3300048: Window_Frame9
+    4300000: Rod_End_1
+    4300002: Rod_End_2
+    4300004: Rod
+    4300006: Ring
+    4300008: Ring1
+    4300010: Ring2
+    4300012: Ring3
+    4300014: Ring4
+    4300016: Ring5
+    4300018: Rod_Back_1
+    4300020: Rod_Back_2
+    4300022: Curtain_2
+    4300024: Curtain_1
+    4300026: Window_Frame2
+    4300028: Window_Frame3
+    4300030: Window_Frame4
+    4300032: Window_Frame5
+    4300034: Window_Frame6
+    4300036: Window_Frame7
+    4300038: Window_Frame8
+    4300040: Window_Frame9
+    4300042: Window_Frame10
+    4300044: Window_Frame11
+    4300046: Window_Frame1
+    4300048: Window_Frame
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
