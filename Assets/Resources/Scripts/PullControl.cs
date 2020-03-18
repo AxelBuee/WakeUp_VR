@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Classe pour controler l'objet avec des mechaniques de tractions.
-/// Permet d'attirer un objet vers la main camera suite a une interaction / une condition.
+/// Permet d'attirer un objet vers l'objet renseigne (TODO : suite a une interaction / une condition ).
 /// Pour l'instant, on en a besoin que pour attirer les billes avec la lampe torche.
 /// a terme il faudra separer les interactions avec les objets des conditions d'action des scripts.
 /// Ex : si on veut pouvoir attirer a nous les billes avec la lampe, une classe gere l'action traction
@@ -14,89 +14,155 @@ using UnityEngine;
 public class PullControl : MonoBehaviour
 {
     /// <summary>
-    /// la main camera. Sert de reference spatial.
+    /// GO vers ou va la force d'attraction.
     /// </summary>
-    public GameObject mOriginObj;
+    public GameObject mPullerObj;
 
     /// <summary>
-    /// true : affiche les spheres et raycast
+    /// Pour arreter la fumee si la bille est trop loin de sa pos de depart.
+    /// </summary>
+    private Vector3 mStartPos;
+
+    /// <summary>
+    /// rayon du cercle autour du point d'origine partir de laquel on stop la fumee si la bille est dehors.
+    /// </summary>
+    public float mStopSmokeRange;
+
+    /// <summary>
+    /// multiplie la taille du vecteur normalise avant de l'appliquer en force.
+    /// </summary>
+    public float mPullForceCoef;
+
+    /// <summary>
+    /// true : affiche les spheres, raycasts et log sur la scene
     /// </summary>
     public bool isOnDebug = false;
 
+    private string mDebugStr;
+
+    /// <summary>
+    /// collider de l'objet a bouger et qui contient se script
+    /// </summary>
     private Collider mCollider;
 
-    private RaycastHit mHit;
+    /// <summary>
+    /// le hit contenant les infos sur le raycast touche par le raycast.
+    /// </summary>
+    //private RaycastHit mHit;
 
+    /// <summary>
+    /// TODO c'est propre aux billes sous le lit, ca n'a rien a faire ici normalement...
+    /// Component de system de particules de la bille
+    /// </summary>
+    private ParticleSystem mParticleSystem;
 
-    // Update is called once per frame
-    void Update ()
+    private void Start()
     {
-        // initialaisations
+        if (mStopSmokeRange <= 0)
         {
-            // main camera encore null, on verifie si on utilise la camera VRTK
-            if( mOriginObj == null )
-            {
-                return;
-            }
-
-            if( mCollider == null )
-            {
-                mCollider = gameObject.GetComponentInChildren<Collider>();
-            }
-
+            mStopSmokeRange = 1f;
         }
 
+        if (mPullForceCoef <= 0)
+        {
+            mPullForceCoef = .1f;
+        }
+
+        if (mParticleSystem == null)
+        {
+            mParticleSystem = this.GetComponentInChildren<ParticleSystem>();
+        }
+
+        if (mCollider == null)
+        {
+            mCollider = gameObject.GetComponentInChildren<Collider>();
+        }
+
+        mDebugStr = string.Empty;
+
+        mStartPos = this.transform.position;
+    }
+
+    /// fixed update a cause de la addForce
+    void FixedUpdate()
+    {
         // a terme il faut un moyen de verifier si les conditions de l'enigme soient reuni pour fair l'action
-        if( !areConditionsValid() )
+        if (!areConditionsValid())
         {
             return;
         }
+
 
         // raycasts 
         {
             RaycastHit hit;
 
-            var lOrigine = mOriginObj.transform.position;
+            var lOrigine = mPullerObj.transform.position;
 
-            //var lRaycastDirection = this.transform.position - lOrigine;
-            var lRaycastDirection = mOriginObj.transform.TransformDirection(Vector3.forward);
-            //Debug.Log("pos : bille " + this.transform.position + ". camera " + lOrigine);
+            var lRaycastDirection = mPullerObj.transform.TransformDirection(Vector3.forward);
 
             // layer 8 est utilise pour la lampe.
             int layerMask = 1 << 8;
 
             // on lance des spheres depuis la camera, de rayon "1f", vers l'objet
-            if ( Physics.SphereCast( lOrigine, 1f, lRaycastDirection, out hit, Mathf.Infinity, layerMask) )
+            if (Physics.SphereCast(lOrigine, 1f, lRaycastDirection, out hit, Mathf.Infinity, layerMask))
             {
-                mHit = hit;
                 // on a touche
-                if ( isOnDebug )
+                //mHit = hit;
+                if (isOnDebug)
                 {
-                    Debug.Log("Did Hit : " + hit.collider.name);
+                    mDebugStr += "Did Hit : " + hit.collider.name + " | ";
                 }
 
-                    Debug.Log(hit.collider.gameObject.name + " " + this.name);
                 // on applique la force de traction
-                if ( hit.collider == mCollider )
+                if (hit.collider == mCollider)
                 {
                     addPullForce(hit.rigidbody, -lRaycastDirection);
                 }
                 else
                 {
-                    Debug.Log("pb wrong collider!!");
+                    mDebugStr += "pb wrong collider!!" + " | ";
                 }
             }
             else
             {
-                // pas touche : on montre les hitbox et raycasts
+                // raycast a pas touche : on montre les hitbox et raycasts
                 if (isOnDebug)
                 {
-                    Debug.DrawRay( lOrigine, lRaycastDirection * 100,  Color.magenta, 1f );
-                    Debug.Log("Did not Hit");
+                    Debug.DrawRay(lOrigine, lRaycastDirection * 100, Color.magenta, 1f);
+                    mDebugStr += "Did not Hit" + " | ";
+                }
+
+            }
+
+        }
+
+        // TODO c'est propre aux billes sous le lit, ca n'a rien a faire ici normalement...
+        // stop les particules de fumee des bille si elle s'est deplacee trop loin
+        if (mCollider != null)
+        {
+            var lDist = (transform.position - mStartPos).magnitude;
+
+            if (isOnDebug)
+            {
+                mDebugStr += "Dist = " + lDist + " | ";
+            }
+
+            if (lDist > mStopSmokeRange)
+            {
+                if (mParticleSystem != null)
+                {
+                    mParticleSystem.Stop();
                 }
             }
         }
 
+        // print + reset debug
+        if (isOnDebug)
+        {
+            Debug.Log(mDebugStr);
+            mDebugStr = string.Empty;
+        }
     }
 
     void OnDrawGizmos()
@@ -106,42 +172,46 @@ public class PullControl : MonoBehaviour
             return;
         }
 
-        // Draw a yellow sphere at the transform's position
+        // Draw a purple sphere at the transform's position
         Gizmos.color = new Color(0.5f, 0f, 0.5f, 0.5f);
         Gizmos.DrawSphere(this.transform.position, 1f);
-        
+
     }
 
     /// <summary>
     /// Rajoute une force a pObjRigidbody vers la lForceDirection.
     /// Supprime la composante verticale pour que l'objet ne vole pas.
+    /// // en fait faudrait attirer l'objet vers sois avec une ia + navmesh soit avec une animation ?
     /// </summary>
     /// <param name="lForceDirection"></param>
-    public void addPullForce( Rigidbody pObjRigidbody , Vector3 lForceDirection )
+    public void addPullForce(Rigidbody pObjRigidbody, Vector3 lForceDirection)
     {
         lForceDirection.y = 0f;
-        lForceDirection = lForceDirection.normalized * 0.01f;
+        lForceDirection = lForceDirection.normalized * mPullForceCoef;
         pObjRigidbody.AddForce(lForceDirection, ForceMode.VelocityChange);
     }
 
     /// <summary>
-    /// pour nos besoins futurs. Pour l'instant ce n'est pas en place.
+    /// a faire pour nos besoins futurs.
+    /// Verifie qu'il y ait bien les components necessaire en attendant.
     /// </summary>
     /// <returns></returns>
     private bool areConditionsValid()
     {
-        if( mCollider == null )
+        if (mCollider == null)
         {
-            Debug.LogWarning("mCollider null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction." );
+            Debug.LogWarning("mCollider null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
             return false;
         }
 
-        if ( mOriginObj == null)
+        if (mPullerObj == null)
         {
-            Debug.LogWarning("mCamera null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction." );
+            Debug.LogWarning("mObjOrigin null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
             return false;
         }
-        // lEventManager = get singleton / manager
+
+        // un truc du genre
+        // var lEventManager = get singleton / manager
         // return lEventManager.mFlashLightIsFounded
         return true;
     }
