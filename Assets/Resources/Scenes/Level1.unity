@@ -7348,6 +7348,11 @@ PrefabInstance:
       propertyPath: isOnDebug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052568088295281308, guid: 06ec34ffdb07ba3429547230e354d20d,
+        type: 3}
+      propertyPath: mPullerObj
+      value: 
+      objectReference: {fileID: 8089497779449368117}
     - target: {fileID: 3052568088295281309, guid: 06ec34ffdb07ba3429547230e354d20d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8332,6 +8337,11 @@ PrefabInstance:
       propertyPath: isOnDebug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052568088295281308, guid: 06ec34ffdb07ba3429547230e354d20d,
+        type: 3}
+      propertyPath: mPullerObj
+      value: 
+      objectReference: {fileID: 8089497779449368117}
     - target: {fileID: 3052568088295281309, guid: 06ec34ffdb07ba3429547230e354d20d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8528,6 +8538,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3643ca984812ddc498dfb2db522de08e, type: 3}
+--- !u!1 &8089497779449368117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8798873050513420633, guid: 3643ca984812ddc498dfb2db522de08e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8089497779449368116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8958410624849002269
 PrefabInstance:
   m_ObjectHideFlags: 0
