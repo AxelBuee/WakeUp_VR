@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary> De quoi faire deplacer la camera avec les touches flechees.
-/// envoie un raycast depuis la camera avec clique gauche
+/// <summary> 
+/// De quoi faire deplacer l'objet qui detient le script avec les touches flechees.
+/// Concu pour le rig contenant les peripheriques VR/AR, mais detournable.
+/// Ne gere plus d'interactions (plus de raycasts).
 /// </summary>
-//[RequireComponent(typeof(Camera))]
 public class BasicController : MonoBehaviour
 {
     private float mRotAroundX = 0f;
@@ -17,7 +18,6 @@ public class BasicController : MonoBehaviour
     private float mVertical;
     private float mJump;
     public float mSpeed = 1f;
-    private RaycastHit mHit;
 
     // Use this for initialization
     void Start()
@@ -39,82 +39,21 @@ public class BasicController : MonoBehaviour
         mJump = Input.GetAxis("Jump");
 
 
-        CameraRotation();
-        CameraTranslation();
-
-        // raycast au clique gauche
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            //CameraRaycast();
-        }
+        RotationXrRig();
+        TranslationXrRig();
     }
 
-    private void CameraRotation()
+    private void RotationXrRig()
     {
-        transform.rotation = Quaternion.Euler(0, mRotAroundY, 0); // rotation of parent (player body) ssi on control un perso
         transform.rotation = Quaternion.Euler(-mRotAroundX, mRotAroundY, 0); // rotation of Camera
     }
 
 
-    private void CameraTranslation()
+    private void TranslationXrRig()
     {
         transform.Translate(Vector3.right * mHorizontal * mSpeed * Time.deltaTime); // lateraux
         transform.Translate(Vector3.forward * mVertical * mSpeed * Time.deltaTime); // frontaux
         transform.Translate(Vector3.up * mJump * mSpeed * Time.deltaTime); // verticaux
     }
 
-    /// <summary>
-    ///  OLD. c'etait avant le pullController
-    /// </summary>
-    private void CameraRaycast()
-    {
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 8;
-
-        // This would cast rays only against colliders in layer 8.
-        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
-
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.SphereCast(transform.position, 1f, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-        {
-            if (hit.transform != null)
-            {
-                mHit = hit;
-            }
-            Debug.Log("Did Hit : " + hit.collider.name);
-            if (hit.collider.name.StartsWith("Marble"))
-            {
-                Vector3 lPullForce = (this.transform.position - hit.transform.position);
-                lPullForce.y = 0f;
-                lPullForce = lPullForce.normalized * 0.1f;
-                hit.rigidbody.AddForce(lPullForce, ForceMode.VelocityChange);
-                //hit.rigidbody.angularVelocity = Vector3
-                //hit.rigidbody.AddForceAtPosition( hit.transform.forward, ForceMode.Impulse );
-                //hit.transform.Rotate( hit.transform.forward, Space.Self );
-                //hit.transform.Translate( hit.transform.forward, Space.Self );
-                /*
-				var lMarbleAnimation = hit.transform.GetComponent<Animation>();
-				lMarbleAnimation.Play(); 
-                */
-            }
-
-        }
-        else
-        {
-            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000,  Color.magenta, 1f);
-            //Debug.Log("Did not Hit");
-        }
-    }
-
-    void OnDrawGizmos()
-    {
-        if (mHit.transform != null)
-        {
-            // Draw a yellow sphere at the transform's position
-            Gizmos.color = new Color(0.5f, 0f, 0.5f, 0.5f);
-            Gizmos.DrawSphere(mHit.transform.position, 1f);
-        }
-    }
 }
