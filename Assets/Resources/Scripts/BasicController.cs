@@ -5,19 +5,13 @@ using UnityEngine;
 /// <summary> De quoi faire deplacer la camera avec les touches flechees.
 /// envoie un raycast depuis la camera avec clique gauche
 /// </summary>
-[RequireComponent(typeof(Camera))]
-public class BasicController : MonoBehaviour 
+//[RequireComponent(typeof(Camera))]
+public class BasicController : MonoBehaviour
 {
-    private Camera mCamera;
-    
-	private float mRotAroundX = 0f;
+    private float mRotAroundX = 0f;
     private float mRotAroundY = 0f;
-    private float mRrotAroundX = 0f;
-    private float mMinRotationX = 0f;
-    private float mMaxRotationX = 0f;
     public float mSensitivityY = 1f;
     public float mSensitivityX = 1f;
-    private float mRrotAroundY = 0f;
 
     private float mHorizontal;
     private float mVertical;
@@ -26,54 +20,53 @@ public class BasicController : MonoBehaviour
     private RaycastHit mHit;
 
     // Use this for initialization
-    void Start () 
-	{
-        mCamera = this.GetComponent<Camera>();
-		mRotAroundX = transform.eulerAngles.x;
-        mRotAroundY = transform.eulerAngles.y;
-	}
-	
-	// Update is called once per frame
-	private void Update()
+    void Start()
     {
-		// rotation
+        mRotAroundX = transform.eulerAngles.x;
+        mRotAroundY = transform.eulerAngles.y;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        // rotation
         mRotAroundX += Input.GetAxis("Mouse Y") * mSensitivityX;
         mRotAroundY += Input.GetAxis("Mouse X") * mSensitivityY;
 
-		//translation 
-		mHorizontal = Input.GetAxis("Horizontal");
+        //translation 
+        mHorizontal = Input.GetAxis("Horizontal");
         mVertical = Input.GetAxis("Vertical");
         mJump = Input.GetAxis("Jump");
 
 
         CameraRotation();
-    	CameraTranslation();
+        CameraTranslation();
 
-		// raycast au clique gauche
-		if( Input.GetKey(KeyCode.Mouse0) )
-		{
-			//CameraRaycast();
-		}
+        // raycast au clique gauche
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            //CameraRaycast();
+        }
     }
 
     private void CameraRotation()
     {
-		if( transform.parent != null )
-		{
-        	transform.parent.rotation = Quaternion.Euler( 0, mRotAroundY, 0 ); // rotation of parent (player body) ssi on control un perso
-		}
-        mCamera.transform.rotation = Quaternion.Euler( -mRotAroundX, mRotAroundY, 0 ); // rotation of Camera
+        transform.rotation = Quaternion.Euler(0, mRotAroundY, 0); // rotation of parent (player body) ssi on control un perso
+        transform.rotation = Quaternion.Euler(-mRotAroundX, mRotAroundY, 0); // rotation of Camera
     }
 
-	
+
     private void CameraTranslation()
     {
-		mCamera.transform.Translate(Vector3.right * mHorizontal * mSpeed * Time.deltaTime); // lateraux
-		mCamera.transform.Translate(Vector3.forward * mVertical * mSpeed * Time.deltaTime); // frontaux
-		mCamera.transform.Translate(Vector3.up * mJump * mSpeed * Time.deltaTime); // verticaux
+        transform.Translate(Vector3.right * mHorizontal * mSpeed * Time.deltaTime); // lateraux
+        transform.Translate(Vector3.forward * mVertical * mSpeed * Time.deltaTime); // frontaux
+        transform.Translate(Vector3.up * mJump * mSpeed * Time.deltaTime); // verticaux
     }
 
-	private void CameraRaycast()
+    /// <summary>
+    ///  OLD. c'etait avant le pullController
+    /// </summary>
+    private void CameraRaycast()
     {
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
@@ -85,18 +78,18 @@ public class BasicController : MonoBehaviour
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.SphereCast(transform.position, 1f, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-        {       
-            if(hit.transform != null)
+        {
+            if (hit.transform != null)
             {
                 mHit = hit;
             }
             Debug.Log("Did Hit : " + hit.collider.name);
-            if( hit.collider.name.StartsWith("Marble") )
-			{
+            if (hit.collider.name.StartsWith("Marble"))
+            {
                 Vector3 lPullForce = (this.transform.position - hit.transform.position);
                 lPullForce.y = 0f;
                 lPullForce = lPullForce.normalized * 0.1f;
-                hit.rigidbody.AddForce( lPullForce , ForceMode.VelocityChange);
+                hit.rigidbody.AddForce(lPullForce, ForceMode.VelocityChange);
                 //hit.rigidbody.angularVelocity = Vector3
                 //hit.rigidbody.AddForceAtPosition( hit.transform.forward, ForceMode.Impulse );
                 //hit.transform.Rotate( hit.transform.forward, Space.Self );
@@ -105,8 +98,8 @@ public class BasicController : MonoBehaviour
 				var lMarbleAnimation = hit.transform.GetComponent<Animation>();
 				lMarbleAnimation.Play(); 
                 */
-			}
-            
+            }
+
         }
         else
         {
@@ -115,13 +108,13 @@ public class BasicController : MonoBehaviour
         }
     }
 
-        void OnDrawGizmos()
+    void OnDrawGizmos()
+    {
+        if (mHit.transform != null)
         {
-            if( mHit.transform != null )
-            {
-                // Draw a yellow sphere at the transform's position
-                Gizmos.color = new Color(0.5f, 0f, 0.5f, 0.5f);
-                Gizmos.DrawSphere( mHit.transform.position, 1f );
-            }
+            // Draw a yellow sphere at the transform's position
+            Gizmos.color = new Color(0.5f, 0f, 0.5f, 0.5f);
+            Gizmos.DrawSphere(mHit.transform.position, 1f);
         }
+    }
 }
