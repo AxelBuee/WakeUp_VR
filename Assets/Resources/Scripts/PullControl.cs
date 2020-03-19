@@ -203,27 +203,27 @@ public class PullControl : MonoBehaviour
     }
 
     /// <summary>
-    /// a faire pour nos besoins futurs.
-    /// Verifie qu'il y ait bien les components necessaire en attendant.
+    /// Verifie qu'il y ait bien les components necessaire au script.
+    /// Retourn false si il manque un component ou si la lampe est eteinte.
     /// </summary>
     /// <returns></returns>
     private bool areConditionsValid()
     {
         if (mCollider == null)
         {
-            Debug.LogWarning("mCollider null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
+            Debug.LogWarning("mCollider null dans pullControl de " + this.gameObject.name + ". L'objet deteneur du script est bien complet?");
             return false;
         }
 
         if (mPullerObj == null)
         {
-            Debug.LogWarning("mObjOrigin null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
+            Debug.LogWarning("mObjOrigin null dans pullControl de " + this.gameObject.name + ". La source d'attraction est bien set?");
             return false;
         }
 
         if( mLight == null )
         {
-            Debug.LogWarning("mLight null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
+            Debug.LogWarning("mLight null dans pullControl de " + this.gameObject.name + ". mObjOrigin (source du mouvment) a bien une lumiere?.");
             return false;
         }
 
