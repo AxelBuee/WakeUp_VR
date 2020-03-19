@@ -4797,7 +4797,7 @@ Transform:
   m_GameObject: {fileID: 3052568088295281310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1299996, y: 0.33, z: 3.3214884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 3052568088225612501}
   - {fileID: 3052568088604536188}
@@ -4816,6 +4816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638b797b225eef149ae6642b3d161df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mPullerObj: {fileID: 0}
+  mStopSmokeRange: 0
+  mPullForceCoef: 0
   isOnDebug: 0
 --- !u!135 &3052568088295281298
 SphereCollider:
@@ -4828,7 +4831,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3052568088295281299
 Rigidbody:
@@ -4892,7 +4895,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3052568088295281310}
-  m_Mesh: {fileID: 4300022, guid: 130d3b56e500cc844afb37b015729f95, type: 3}
+  m_Mesh: {fileID: 4300024, guid: 130d3b56e500cc844afb37b015729f95, type: 3}
 --- !u!1 &3052568088604536189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4936,8 +4939,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.89901805, b: 0, a: 1}
-  m_Intensity: 1
-  m_Range: 3
+  m_Intensity: 2
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4970,7 +4973,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
