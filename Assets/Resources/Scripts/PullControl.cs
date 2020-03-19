@@ -56,6 +56,11 @@ public class PullControl : MonoBehaviour
     /// </summary>
     private ParticleSystem mParticleSystem;
 
+    /// <summary>
+    /// component Light de la lampe dont le parent est active/desactive;
+    /// </summary>
+    private Light mLight;
+
     private void Start()
     {
         if (mStopSmokeRange <= 0)
@@ -76,6 +81,11 @@ public class PullControl : MonoBehaviour
         if (mCollider == null)
         {
             mCollider = gameObject.GetComponentInChildren<Collider>();
+        }
+
+        if( mPullerObj != null )
+        {
+            mLight = mPullerObj.transform.parent.GetComponentInChildren<Light>(true);
         }
 
         mDebugStr = string.Empty;
@@ -211,6 +221,17 @@ public class PullControl : MonoBehaviour
             return false;
         }
 
+        if( mLight == null )
+        {
+            Debug.LogWarning("mLight null dans pullControl de " + this.gameObject.name + ". On n'effectue pas la traction.");
+            return false;
+        }
+
+        // la bille reste inerte si la lampe est eteinte
+        if ( !mLight.transform.gameObject.activeSelf )
+        {
+            return false;
+        }
         // un truc du genre
         // var lEventManager = get singleton / manager
         // return lEventManager.mFlashLightIsFounded
