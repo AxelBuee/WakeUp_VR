@@ -104,7 +104,8 @@ public class PullControl : MonoBehaviour
             // layer 8 est utilise pour la lampe.
             int layerMask = 1 << 8;
 
-            // on lance des spheres depuis la camera, de rayon "1f", vers l'objet
+            // on lance des spheres depuis mPullerObj, de rayon "1f", vers l'objet
+            // si l'objet est dans le rayon de la sphere au moment du cast, pas de colision. 
             if (Physics.SphereCast(lOrigine, 1f, lRaycastDirection, out hit, Mathf.Infinity, layerMask))
             {
                 // on a touche
