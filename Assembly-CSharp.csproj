@@ -56,9 +56,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\Prefabs\Flashlight\Script\flashlight.cs" />
-     <Compile Include="Assets\Resources\Prefabs\Vincent\MeshEditor\Scripts\GameObjectDeformer.cs" />
-     <Compile Include="Assets\Resources\Prefabs\Vincent\MeshEditor\Scripts\GameObjectDeformerEditor.cs" />
-     <Compile Include="Assets\Resources\Prefabs\Vincent\MeshEditor\Scripts\GizmoScript.cs" />
      <Compile Include="Assets\Resources\Scripts\BasicController.cs" />
      <Compile Include="Assets\Resources\Scripts\PullControl.cs" />
      <Compile Include="Assets\Resources\Scripts\RotationFreezer.cs" />
@@ -126,11 +123,17 @@
      <None Include="Assets\Resources\Prefabs\Vincent\MeshEditor\LowPolyWeapon\Shaders\AlphaTest-DiffuseBack.shader" />
      <None Include="Assets\VR Beginner\Shaders\UI-DefaultAlwayOnTop.shader" />
      <None Include="Assets\CreatorKitVR_Third-PartyNotice.txt" />
+ <Reference Include="Unity.XR.Management">
+ <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Subsystem.Registration">
+ <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
  </Reference>
  <Reference Include="Unity.XR.Interaction.Toolkit">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
@@ -150,11 +153,17 @@
  <Reference Include="Unity.RenderPipelines.Core.Runtime">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.XR.Oculus">
+ <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VisualEffectGraph.Runtime">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.Oculus.Editor">
+ <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Runtime">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
@@ -173,6 +182,9 @@
  </Reference>
  <Reference Include="UnityEngine.XR.LegacyInputHelpers">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.Management.Editor">
+ <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>/Users/pierre/Documents/unity/WakeUp_VR/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
