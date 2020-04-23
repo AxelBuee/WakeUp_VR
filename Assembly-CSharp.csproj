@@ -120,6 +120,7 @@
      <Compile Include="Assets\VR Beginner\Scripts\System\XRReleaseController.cs" />
      <Compile Include="Assets\VR Beginner\Scripts\Tutorial\FuseBox.cs" />
      <Compile Include="Assets\VR Beginner\Scripts\Tutorial\ObjectActivator.cs" />
+     <Compile Include="Assets\rescale.cs" />
      <None Include="Assets\Resources\Prefabs\Vincent\MeshEditor\LowPolyWeapon\Shaders\AlphaTest-DiffuseDoublesided.shader" />
      <None Include="Assets\Resources\Prefabs\Vincent\MeshEditor\LowPolyWeapon\Sprite Source.txt" />
      <None Include="Assets\VR Beginner\CreatorKitVR_Third-PartyNotice.txt" />
