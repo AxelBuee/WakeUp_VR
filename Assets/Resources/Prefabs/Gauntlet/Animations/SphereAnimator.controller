@@ -35,7 +35,7 @@ AnimatorController:
   m_Name: SphereAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: sphere
+  - m_Name: SphereDrop
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -115,7 +115,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: sphere
+    m_ConditionEvent: SphereDrop
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -324430285777946241}
