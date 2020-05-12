@@ -4458,7 +4458,6 @@ GameObject:
   - component: {fileID: 1843901643}
   - component: {fileID: 1843901689}
   - component: {fileID: 1843901560}
-  - component: {fileID: 1843895271}
   m_Layer: 0
   m_Name: locker1
   m_TagString: Untagged
@@ -4706,19 +4705,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1843895271
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843895256}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.056716397
-  m_Center: {x: 0.000000010294427, y: -0.000000012417635, z: 0.03454237}
 --- !u!65 &1843900546
 BoxCollider:
   m_ObjectHideFlags: 0
