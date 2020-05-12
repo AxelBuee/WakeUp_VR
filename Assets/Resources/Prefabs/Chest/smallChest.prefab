@@ -590,11 +590,9 @@ GameObject:
   - component: {fileID: 3357313577314265284}
   - component: {fileID: 3357313577314265285}
   - component: {fileID: 6059203706179094959}
-  - component: {fileID: 4972598273768301763}
   - component: {fileID: 3835835659454828848}
   - component: {fileID: 5172216880186178642}
   - component: {fileID: 1052747139144098012}
-  - component: {fileID: 9003190441984428200}
   m_Layer: 0
   m_Name: locker1
   m_TagString: Untagged
@@ -679,65 +677,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.044037372, y: 0.044037364, z: 0.0120522175}
   m_Center: {x: 0.000000015841968, y: 0, z: 0.0010735056}
---- !u!114 &4972598273768301763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357313577314265283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e24bef3bb4c44d40a431d910436a547, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnSelectedEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9003190441984428200}
-        m_MethodName: DisableInteraction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1052747139144098012}
-        m_MethodName: TriggerAnimation
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3357313578543548813}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7685668170881970705}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3835835659454828848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,18 +739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerName: Turn
---- !u!114 &9003190441984428200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357313577314265283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2533b8d0466983459c7efcf97ccf88d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3357313577354903893
 GameObject:
   m_ObjectHideFlags: 0

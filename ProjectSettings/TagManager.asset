@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ignite
+  - Stone_yellow
+  - Saucers
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Hands
   - Teleporter
   - NoHandCollide
-  - 
+  - KeyChest
   - 
   - 
   - 
