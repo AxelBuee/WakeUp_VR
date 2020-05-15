@@ -7,9 +7,12 @@ public class Chest : MonoBehaviour
     public static int NbKeys;
     private bool isOpened;
 
+    private AudioSource audioData;
+
     void Awake() {
         NbKeys = 0;
         isOpened = false;
+        audioData = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class Chest : MonoBehaviour
             this.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
             
             this.gameObject.transform.GetChild(0).GetComponent<HingeJoint>().useMotor = true;
+            audioData.Play(0);
             StartCoroutine(OffMotor());
             isOpened = true;
         }
