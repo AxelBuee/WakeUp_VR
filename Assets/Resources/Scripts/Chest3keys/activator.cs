@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Locker : MonoBehaviour
+public class activator : MonoBehaviour
 {
-    /*public GameObject chest;
-    public bool canDestroyTheKey;
-    // Start is called before the first frame update
+    private bool isActivated;
+    private bool canDestroyTheKey;
+
 
     void Awake() {
-        canDestroyTheKey = false;
+        isActivated = false;
+        canDestroyTheKey = true;
     }
+
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -19,17 +22,18 @@ public class Locker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!isActivated) {
+            Chest.NbKeys += 1;
+            isActivated = true;
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
         if (canDestroyTheKey && other.gameObject.layer == 12) {      //si il a le layer "keyChest" et canDestroyTheKey
-            chest.GetComponent<Chest>().NbKeys += 1; //incrémenter le nombre de clefs sur le coffre (qui ont été insérées)
+            canDestroyTheKey = false;
             Destroy(other.gameObject);
    
         }
-    }*/
-
-    
+    }
 }
