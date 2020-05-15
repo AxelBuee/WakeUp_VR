@@ -32,7 +32,7 @@ public class activator : MonoBehaviour
     {
         if (canDestroyTheKey && other.gameObject.layer == 12) {      //si il a le layer "keyChest" et canDestroyTheKey
             canDestroyTheKey = false;
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
    
         }
     }
