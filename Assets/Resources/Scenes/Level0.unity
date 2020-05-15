@@ -518,13 +518,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorForVR
       objectReference: {fileID: 0}
+    - target: {fileID: 4002540183164876, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01795
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002540183164876, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002540183164876, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0249
+      objectReference: {fileID: 0}
     - target: {fileID: 4336121855711112, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.993
       objectReference: {fileID: 0}
     - target: {fileID: 4336121855711112, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00000044152
       objectReference: {fileID: 0}
     - target: {fileID: 4336121855711112, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
       propertyPath: m_LocalPosition.z
@@ -597,17 +609,22 @@ PrefabInstance:
     - target: {fileID: 59430623978001474, guid: 2722c0fcdac574f3bbb909ee861b4d26,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.00022339824
+      value: -0.00022339635
       objectReference: {fileID: 0}
     - target: {fileID: 59430623978001474, guid: 2722c0fcdac574f3bbb909ee861b4d26,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00000002210436
+      value: -0.017949985
       objectReference: {fileID: 0}
     - target: {fileID: 59430623978001474, guid: 2722c0fcdac574f3bbb909ee861b4d26,
         type: 3}
       propertyPath: m_Spring.targetPosition
-      value: 45
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 59430623978001474, guid: 2722c0fcdac574f3bbb909ee861b4d26,
+        type: 3}
+      propertyPath: m_UseSpring
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2722c0fcdac574f3bbb909ee861b4d26, type: 3}
@@ -696,6 +713,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229800725}
   m_Mesh: {fileID: 4300052, guid: 1a762a28444b7415d82ab86ccd3feaf0, type: 3}
+--- !u!1 &230257999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9104885612581022530, guid: fab601467cce9e64a835598b112a3d15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1217385697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &230258003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230257999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4708dc7b11a04869893a62858f49139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2119942304}
+  door: {fileID: 621621501}
+  doorLight: {fileID: 1038236045}
+  kidLight: {fileID: 456629097}
 --- !u!1 &236453672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &456629098
 Transform:
   m_ObjectHideFlags: 0
@@ -1204,6 +1243,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515224298}
   m_Mesh: {fileID: 4300002, guid: 074ad4cea43d7414e82e804bd2d09b25, type: 3}
+--- !u!1 &621621501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1757885575305526, guid: 2722c0fcdac574f3bbb909ee861b4d26,
+    type: 3}
+  m_PrefabInstance: {fileID: 142805974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &684274412
 PrefabInstance:
   m_ObjectHideFlags: 0
