@@ -70,6 +70,7 @@
     <Compile Include="Assets\Resources\Scripts\Chest3keys\activator.cs" />
     <Compile Include="Assets\Resources\Scripts\Globe.cs" />
     <Compile Include="Assets\Resources\Scripts\ManageSocleCube.cs" />
+    <Compile Include="Assets\Resources\Scripts\ManageSoclePuzzle.cs" />
     <Compile Include="Assets\Resources\Scripts\PullControl.cs" />
     <Compile Include="Assets\Resources\Scripts\RotationFreezer.cs" />
     <Compile Include="Assets\Resources\Scripts\StartGameAnnim.cs" />
