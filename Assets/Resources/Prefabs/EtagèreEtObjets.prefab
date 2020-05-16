@@ -48,7 +48,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4043211886175956}
-  - component: {fileID: 33553760884406334}
   - component: {fileID: 6135129402123740604}
   - component: {fileID: 6135129402123740607}
   m_Layer: 0
@@ -73,14 +72,6 @@ Transform:
   m_Father: {fileID: 4808180813667694}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33553760884406334
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102108948232224}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &6135129402123740604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -611,7 +602,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7637781686526257116, guid: f125cb860e3b1e44585ab587487f3e98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f125cb860e3b1e44585ab587487f3e98, type: 3}
 --- !u!4 &3847116910282955711 stripped
 Transform:
@@ -971,7 +963,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookGreen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1281819552312648701, guid: 021949f8e99a07a4b9ebb77c3e1a6df3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 021949f8e99a07a4b9ebb77c3e1a6df3, type: 3}
 --- !u!4 &4568293952480521787 stripped
 Transform:
