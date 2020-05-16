@@ -60,6 +60,7 @@
      <Compile Include="Assets\Resources\Scripts\BasicController.cs" />
      <Compile Include="Assets\Resources\Scripts\Chest3keys\Chest.cs" />
      <Compile Include="Assets\Resources\Scripts\Chest3keys\activator.cs" />
+     <Compile Include="Assets\Resources\Scripts\Globe.cs" />
      <Compile Include="Assets\Resources\Scripts\PullControl.cs" />
      <Compile Include="Assets\Resources\Scripts\RotationFreezer.cs" />
      <Compile Include="Assets\Resources\Scripts\StartGameAnnim.cs" />
