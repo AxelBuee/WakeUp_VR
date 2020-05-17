@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2102030090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102030091}
+  - component: {fileID: 2102030093}
+  - component: {fileID: 2102030092}
+  m_Layer: 0
+  m_Name: PuzzleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2102030091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102030090}
+  m_LocalRotation: {x: -0.55425924, y: -0.55425924, z: -0.43908617, w: 0.43908617}
+  m_LocalPosition: {x: -0.02300024, y: 2.6273117, z: -0.15326643}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8768807930499454581}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2102030093
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102030090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2102030092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102030090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a7e5aa33325de408d5266b9fa1440a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piecePuzzle1locked: {fileID: 1983540432222355576}
+  piecePuzzle2locked: {fileID: 8538857114656766417}
+  piecePuzzle3locked: {fileID: 8700339924867817004}
+  piecePuzzle4locked: {fileID: 7234458724217024745}
+  piecePuzzle5locked: {fileID: 73125156169697283}
+  Couvercle: {fileID: 7170575282086954238}
+  Soclecount: {fileID: 4781849181957284951}
 --- !u!1 &73125156169697283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1397,8 @@ GameObject:
   - component: {fileID: 3799747061456694663}
   - component: {fileID: 835133261}
   - component: {fileID: 835133259}
-  - component: {fileID: 835133260}
+  - component: {fileID: 5295292719237207542}
+  - component: {fileID: 5295292719237207544}
   m_Layer: 0
   m_Name: socle
   m_TagString: Untagged
@@ -1431,7 +1497,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 21.999998, y: 22.000006, z: 59.999992}
   m_Center: {x: 0.00000387989, y: -0.0000038146973, z: 19.999994}
---- !u!114 &835133260
+--- !u!136 &5295292719237207542
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188226461400962771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 12
+  m_Height: 20
+  m_Direction: 0
+  m_Center: {x: 0.00000387989, y: -0.0000038146973, z: 19.999994}
+--- !u!114 &5295292719237207544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1440,15 +1520,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 4188226461400962771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a7e5aa33325de408d5266b9fa1440a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1919c94f113ba47a2a4bde09e12b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piecePuzzle1locked: {fileID: 1983540432222355576}
-  piecePuzzle2locked: {fileID: 8538857114656766417}
-  piecePuzzle3locked: {fileID: 8700339924867817004}
-  piecePuzzle4locked: {fileID: 7234458724217024745}
-  piecePuzzle5locked: {fileID: 73125156169697283}
-  Couvercle: {fileID: 7170575282086954238}
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  m_AttachTransform: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_OnHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2102030090}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  m_OnSelectExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  AcceptedType: 
 --- !u!1 &4781849181957284951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898556578069188898}
+  - component: {fileID: 5295292719237207549}
   m_Layer: 0
   m_Name: puzzlelocked
   m_TagString: Untagged
@@ -1484,6 +1594,19 @@ Transform:
   m_Father: {fileID: 8768807930499454581}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5295292719237207549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781849181957284951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8fc4726fca9304ea6fc2720a176ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockedPuzzleCount: 0
 --- !u!1 &4868301258566548018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2960169827205332452}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2025,7 +2149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 6980401332781334799}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2210,7 +2335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2351066531264817520}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2395,7 +2521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 6648584196548752520}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2580,7 +2707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 640487564521926823}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3377,6 +3505,7 @@ Transform:
   - {fileID: 2507550898907568531}
   - {fileID: 4112226234667496112}
   - {fileID: 2898556578069188898}
+  - {fileID: 2102030091}
   m_Father: {fileID: 8459082451881509516}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15.457, y: 0, z: 0}
