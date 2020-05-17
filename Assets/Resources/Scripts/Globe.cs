@@ -10,6 +10,8 @@ public class Globe : MonoBehaviour
 {
     [FormerlySerializedAs("smashedObject")]
     public GameObject SmashedObject;
+    [FormerlySerializedAs("HiddenKey")]
+    public GameObject HiddenKey;
 
     [Header("Audio")]
     public AudioClip[] BreakingAudioClips;
@@ -43,7 +45,10 @@ public class Globe : MonoBehaviour
             {
                 child.gameObject.SetActive(false);
             }
-
+            HiddenKey.SetActive(true);
+            HiddenKey.GetComponentInChildren<BoxCollider>().enabled = true;
+            HiddenKey.GetComponent<Rigidbody>().isKinematic = false;
+            HiddenKey.GetComponent<Rigidbody>().useGravity = true;
             SmashedObject.SetActive(true);
 
             SFXPlayer.Instance.PlaySFX(BreakingAudioClips[Random.Range(0, BreakingAudioClips.Length)], transform.position, new SFXPlayer.PlayParameters()
