@@ -27,10 +27,10 @@ public class ManageSoclePuzzle : MonoBehaviour
     void OpenChest()
     {
         Destroy(piecePuzzle1locked);
-        Destroy(piecePuzzle1locked);
-        Destroy(piecePuzzle1locked);
-        Destroy(piecePuzzle1locked);
-        Destroy(piecePuzzle1locked);
+        Destroy(piecePuzzle2locked);
+        Destroy(piecePuzzle3locked);
+        Destroy(piecePuzzle4locked);
+        Destroy(piecePuzzle5locked);
         Destroy(Couvercle);
     }
 
