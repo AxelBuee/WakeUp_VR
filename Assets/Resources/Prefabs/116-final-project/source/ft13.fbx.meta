@@ -1114,6 +1114,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: blinn19
+    second: {fileID: 2100000, guid: c9917c2856189444cb7e67b27e1e4d37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_decals
+    second: {fileID: 2100000, guid: 40485a4ad2273ea4bae3ffbb4dfb2d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: m_wall
     second: {fileID: 2100000, guid: 31c5187c820d2434b9cac0de667df185, type: 2}
   materials:

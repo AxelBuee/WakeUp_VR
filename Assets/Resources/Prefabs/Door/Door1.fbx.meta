@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 30781d80ab7edcd47b59f6bbeb9d491a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood1
+    second: {fileID: 2100000, guid: cc0d04ce08c093845be6452083f31b11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: blinn2
     second: {fileID: 2100000, guid: 8a22db76d7c5f1e4e957d91b55cf10b6, type: 2}
   - first:
