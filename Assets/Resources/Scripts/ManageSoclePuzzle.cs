@@ -26,12 +26,20 @@ public class ManageSoclePuzzle : MonoBehaviour
 
     void OpenChest()
     {
+        /*
         Destroy(piecePuzzle1locked);
         Destroy(piecePuzzle2locked);
         Destroy(piecePuzzle3locked);
         Destroy(piecePuzzle4locked);
         Destroy(piecePuzzle5locked);
         Destroy(Couvercle);
+        */
+        piecePuzzle1locked.SetActive(false);
+        piecePuzzle2locked.SetActive(false);
+        piecePuzzle3locked.SetActive(false);
+        piecePuzzle4locked.SetActive(false);
+        piecePuzzle5locked.SetActive(false);
+        Couvercle.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -41,35 +49,40 @@ public class ManageSoclePuzzle : MonoBehaviour
             GameObject puzzlepiece = other.gameObject;
             if (puzzlepiece.name == "piecePuzzle1")
             {
-                Destroy(puzzlepiece);
+                //Destroy(puzzlepiece);
+                puzzlepiece.SetActive(false);
                 piecePuzzle1locked.SetActive(true);
                 Soclecount.GetComponent<ObjectCount>().lockedPuzzleCount++;
                 //lockedPuzzleCount++;
             }
             else if (puzzlepiece.name == "piecePuzzle2")
             {
-                Destroy(puzzlepiece);
+                //Destroy(puzzlepiece);
+                puzzlepiece.SetActive(false);
                 piecePuzzle2locked.SetActive(true);
                 Soclecount.GetComponent<ObjectCount>().lockedPuzzleCount++;
                 //lockedPuzzleCount++;
             }
             else if (puzzlepiece.name == "piecePuzzle3")
             {
-                Destroy(puzzlepiece);
+                //Destroy(puzzlepiece);
+                puzzlepiece.SetActive(false);
                 piecePuzzle3locked.SetActive(true);
                 Soclecount.GetComponent<ObjectCount>().lockedPuzzleCount++;
                 //lockedPuzzleCount++;
             }
             else if (puzzlepiece.name == "piecePuzzle4")
             {
-                Destroy(puzzlepiece);
+                //Destroy(puzzlepiece);
+                puzzlepiece.SetActive(false);
                 piecePuzzle4locked.SetActive(true);
                 Soclecount.GetComponent<ObjectCount>().lockedPuzzleCount++;
                 //lockedPuzzleCount++;
             }
             else if (puzzlepiece.name == "piecePuzzle5")
             {
-                Destroy(puzzlepiece);
+                //Destroy(puzzlepiece);
+                puzzlepiece.SetActive(false);
                 piecePuzzle5locked.SetActive(true);
                 Soclecount.GetComponent<ObjectCount>().lockedPuzzleCount++;
                 //lockedPuzzleCount++;

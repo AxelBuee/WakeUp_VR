@@ -1865,7 +1865,6 @@ GameObject:
   - component: {fileID: 4463156539942618797}
   - component: {fileID: 4428544164877553328}
   - component: {fileID: 5213313571120914794}
-  - component: {fileID: 2960169827205332452}
   m_Layer: 14
   m_Name: piecePuzzle2
   m_TagString: Untagged
@@ -1964,7 +1963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 2960169827205332452}
+  - {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2025,19 +2024,6 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
---- !u!65 &2960169827205332452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5295292720065044852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.03304329, y: 0.03818793, z: 0.009999999}
-  m_Center: {x: -0.016638806, y: 0.0139423115, z: -0.005000044}
 --- !u!1 &5295292720065044853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2037,6 @@ GameObject:
   - component: {fileID: 4013447274307849539}
   - component: {fileID: 3006553620324020044}
   - component: {fileID: 3697041208415995936}
-  - component: {fileID: 6980401332781334799}
   m_Layer: 14
   m_Name: piecePuzzle1
   m_TagString: Untagged
@@ -2150,7 +2135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 6980401332781334799}
+  - {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2211,19 +2196,6 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
---- !u!65 &6980401332781334799
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5295292720065044853}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.033043288, y: 0.03818793, z: 0.009999999}
-  m_Center: {x: 0.016355973, y: -0.013942335, z: -0.005000022}
 --- !u!1 &5295292720065044873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,7 +2395,6 @@ GameObject:
   - component: {fileID: 7085404943483435716}
   - component: {fileID: 5464151313016423961}
   - component: {fileID: 4705612094085547788}
-  - component: {fileID: 6648584196548752520}
   m_Layer: 14
   m_Name: piecePuzzle4
   m_TagString: Untagged
@@ -2522,7 +2493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 6648584196548752520}
+  - {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2583,19 +2554,6 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
---- !u!65 &6648584196548752520
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5295292720065044874}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.038195986, y: 0.033036314, z: 0.009999999}
-  m_Center: {x: -0.014146412, y: -0.016923694, z: -0.0050000516}
 --- !u!1 &5295292720065044875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2567,6 @@ GameObject:
   - component: {fileID: 5740432050997499627}
   - component: {fileID: 6777470852441580888}
   - component: {fileID: 8534108130347174119}
-  - component: {fileID: 640487564521926823}
   m_Layer: 14
   m_Name: piecePuzzle3
   m_TagString: Untagged
@@ -2708,7 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 640487564521926823}
+  - {fileID: 0}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2769,19 +2726,6 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
---- !u!65 &640487564521926823
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5295292720065044875}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.038196, y: 0.033036314, z: 0.009999999}
-  m_Center: {x: 0.013945298, y: 0.016352553, z: -0.005000044}
 --- !u!1 &5322734905589097234
 GameObject:
   m_ObjectHideFlags: 0
