@@ -12,7 +12,7 @@ public class ManageSocleCube : MonoBehaviour
     public GameObject cubeUlocked;
     public GameObject cubePlocked;
     public GameObject cubeIlocked;
-    int lockedCubeCount = 0;
+    public GameObject socleCube;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,67 +27,72 @@ public class ManageSocleCube : MonoBehaviour
 
     void KeyAppears()
     {
-        Destroy(cubeWlocked);
-        Destroy(cubeAlocked);
-        Destroy(cubeKlocked);
-        Destroy(cubeElocked);
-        Destroy(cubeUlocked);
-        Destroy(cubePlocked);
-        Destroy(cubeIlocked);
+        /*
+        cubeWlocked.SetActive(false);
+        cubeAlocked.SetActive(false);
+        cubeKlocked.SetActive(false);
+        cubeElocked.SetActive(false);
+        cubeUlocked.SetActive(false);
+        cubePlocked.SetActive(false);
+        cubeIlocked.SetActive(false);*/
+        socleCube.SetActive(false);
         key.SetActive(true);
-        Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.layer == 13)
+        if(other.gameObject.layer == 13)
         {
-            GameObject cube = collision.gameObject;
+            GameObject cube = other.gameObject;
             if (cube.name == "cubeW")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeWlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeA")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeAlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeK")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeKlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeE")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeElocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeU")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeUlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeP")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubePlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cube!")
             {
-                Destroy(cube);
+                cube.SetActive(false);
                 cubeIlocked.SetActive(true);
-                lockedCubeCount++;
+                socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
-            if(lockedCubeCount == 7)
+            if(socleCube.GetComponent<ObjectCount>().lockedPuzzleCount == 7)
             {
                 KeyAppears();
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
             }
         }
     }
