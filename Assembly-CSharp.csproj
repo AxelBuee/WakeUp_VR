@@ -135,9 +135,13 @@
     <Compile Include="Assets\VR Beginner\Scripts\Tutorial\ObjectActivator.cs" />
     <Compile Include="Assets\rescale.cs" />
     <Compile Include="Assets\rigi.cs" />
+    <None Include="Assets\Resources\Material\oldplywood-ogl\About these PBR files.txt" />
     <None Include="Assets\VR Beginner\CreatorKitVR_Third-PartyNotice.txt" />
+    <None Include="Assets\Resources\Material\burlap-stained1-Normal-Unity2-1\About these PBR files.txt" />
     <None Include="Assets\VR Beginner\Shaders\UI-DefaultAlwayOnTop.shader" />
+    <None Include="Assets\Resources\Material\smooth-stucco-Unity2-1\About these PBR files.txt" />
     <None Include="Assets\CreatorKitVR_Third-PartyNotice.txt" />
+    <None Include="Assets\Resources\Material\corkboard3b-Unity\About these PBR files.txt" />
     <Reference Include="Unity.XR.Management">
       <HintPath>C:/Users/rosvi/Documents/GitHub/WakeUp_VR/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
