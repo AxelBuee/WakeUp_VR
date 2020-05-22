@@ -13,6 +13,7 @@ public class ManageSocleCube : MonoBehaviour
     public GameObject cubePlocked;
     public GameObject cubeIlocked;
     public GameObject socleCube;
+    public GameObject socleCubeModel;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,15 @@ public class ManageSocleCube : MonoBehaviour
         cubeUlocked.SetActive(false);
         cubePlocked.SetActive(false);
         cubeIlocked.SetActive(false);*/
-        socleCube.SetActive(false);
+        //socleCube.SetActive(false);
+        socleCubeModel.GetComponent<DissolveScript>().enabled = true;
+        cubeWlocked.GetComponent<DissolveScript>().enabled = true;
+        cubeAlocked.GetComponent<DissolveScript>().enabled = true;
+        cubeKlocked.GetComponent<DissolveScript>().enabled = true;
+        cubeElocked.GetComponent<DissolveScript>().enabled = true;
+        cubeUlocked.GetComponent<DissolveScript>().enabled = true;
+        cubePlocked.GetComponent<DissolveScript>().enabled = true;
+        cubeIlocked.GetComponent<DissolveScript>().enabled = true;
         key.SetActive(true);
     }
 

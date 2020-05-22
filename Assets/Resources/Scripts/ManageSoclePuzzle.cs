@@ -10,6 +10,7 @@ public class ManageSoclePuzzle : MonoBehaviour
     public GameObject piecePuzzle4locked;
     public GameObject piecePuzzle5locked;
     public GameObject Couvercle;
+    public GameObject SocleModel;
     public GameObject Soclecount;
     //int lockedPuzzleCount = 0;
     // Start is called before the first frame update
@@ -32,7 +33,14 @@ public class ManageSoclePuzzle : MonoBehaviour
         piecePuzzle3locked.SetActive(false);
         piecePuzzle4locked.SetActive(false);
         piecePuzzle5locked.SetActive(false);*/
-        Couvercle.SetActive(false);
+        //Couvercle.SetActive(false);
+        SocleModel.GetComponent<DissolveScript>().enabled = true;
+        Couvercle.GetComponent<DissolveScript>().enabled = true;
+        piecePuzzle1locked.GetComponent<DissolveScript>().enabled = true;
+        piecePuzzle2locked.GetComponent<DissolveScript>().enabled = true;
+        piecePuzzle3locked.GetComponent<DissolveScript>().enabled = true;
+        piecePuzzle4locked.GetComponent<DissolveScript>().enabled = true;
+        piecePuzzle5locked.GetComponent<DissolveScript>().enabled = true;
     }
 
     private void OnTriggerStay(Collider other)

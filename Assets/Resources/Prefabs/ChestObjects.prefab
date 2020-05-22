@@ -437,7 +437,8 @@ MonoBehaviour:
   piecePuzzle3locked: {fileID: 8700339924867817004}
   piecePuzzle4locked: {fileID: 7234458724217024745}
   piecePuzzle5locked: {fileID: 73125156169697283}
-  Couvercle: {fileID: 7170575282086954238}
+  Couvercle: {fileID: 8283550996807706026}
+  SocleModel: {fileID: 4188226461400962771}
   Soclecount: {fileID: 4781849181957284951}
 --- !u!1 &73125156169697283
 GameObject:
@@ -450,6 +451,7 @@ GameObject:
   - component: {fileID: 6745869932029984690}
   - component: {fileID: 6406830020349237563}
   - component: {fileID: 5128677754109284678}
+  - component: {fileID: 4234354068158478412}
   m_Layer: 0
   m_Name: piecePuzzle5locked
   m_TagString: Untagged
@@ -518,6 +520,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4234354068158478412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73125156169697283}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
 --- !u!1 &1142236990137019606
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +545,7 @@ GameObject:
   - component: {fileID: 4489899305770374050}
   - component: {fileID: 7071019250108905358}
   - component: {fileID: 1055591783871500055}
+  - component: {fileID: 87404620169767256}
   m_Layer: 0
   m_Name: cube!locked
   m_TagString: Untagged
@@ -617,6 +633,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &87404620169767256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142236990137019606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &1601288445718907104
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +689,7 @@ GameObject:
   - component: {fileID: 7570466670522178001}
   - component: {fileID: 314827239768494983}
   - component: {fileID: 8396172052004837551}
+  - component: {fileID: 6234594190386943519}
   m_Layer: 0
   m_Name: piecePuzzle1locked
   m_TagString: Untagged
@@ -728,6 +758,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6234594190386943519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983540432222355576}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
 --- !u!1 &2243105492223343980
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +826,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1196,6 +1239,7 @@ MonoBehaviour:
   cubePlocked: {fileID: 7512680793167115843}
   cubeIlocked: {fileID: 1142236990137019606}
   socleCube: {fileID: 5404672679835892442}
+  socleCubeModel: {fileID: 4868301258566548018}
 --- !u!1 &2800040502448405264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1475,7 @@ GameObject:
   - component: {fileID: 289281189891922911}
   - component: {fileID: 2127452712997434680}
   - component: {fileID: 1972832593586336602}
+  - component: {fileID: 284998449785474241}
   m_Layer: 0
   m_Name: cubeWlocked
   m_TagString: Untagged
@@ -1518,6 +1563,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &284998449785474241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966464115081324955}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &3333374110812936031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1811,7 @@ GameObject:
   - component: {fileID: 6480464431202497368}
   - component: {fileID: 6462134764498855620}
   - component: {fileID: 4073372259657144326}
+  - component: {fileID: 7820409370558854279}
   m_Layer: 0
   m_Name: cubeKlocked
   m_TagString: Untagged
@@ -1840,6 +1899,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7820409370558854279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3609686924966040534}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &3853532053312867877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,6 +1978,7 @@ GameObject:
   - component: {fileID: 835133261}
   - component: {fileID: 835133259}
   - component: {fileID: 5295292719237207544}
+  - component: {fileID: 6023714685640289579}
   m_Layer: 0
   m_Name: socle
   m_TagString: Untagged
@@ -2051,6 +2124,19 @@ MonoBehaviour:
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   AcceptedType: PuzzlePiece
+--- !u!114 &6023714685640289579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188226461400962771}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
 --- !u!1 &4781849181957284951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2199,7 @@ GameObject:
   - component: {fileID: 981488593743852378}
   - component: {fileID: 3885931334475577767}
   - component: {fileID: 4029380030629170378}
+  - component: {fileID: 8284987659140474980}
   m_Layer: 0
   m_Name: soclecubeModel
   m_TagString: Untagged
@@ -2214,6 +2301,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6100502710205080210, guid: 8a018067ea935854b84a4e01728c45e1, type: 3}
+--- !u!114 &8284987659140474980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868301258566548018}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &5078949658062969699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,7 +4028,7 @@ GameObject:
   - component: {fileID: 8742814303369982574}
   - component: {fileID: 2015626697154531945}
   - component: {fileID: 2234501923447868197}
-  - component: {fileID: 5270169034888287815}
+  - component: {fileID: 2623101900623524258}
   m_Layer: 0
   m_Name: cubeUlocked
   m_TagString: Untagged
@@ -4016,19 +4116,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &5270169034888287815
-BoxCollider:
+--- !u!114 &2623101900623524258
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6768532490300028017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9999998, y: 2.0000002, z: 2.0000002}
-  m_Center: {x: -0.0000047683716, y: 0.000011444092, z: -0.0000047683716}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &6944113415041229470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,6 +4141,7 @@ GameObject:
   - component: {fileID: 7953222980240626478}
   - component: {fileID: 3855118541183349499}
   - component: {fileID: 6646710330698620254}
+  - component: {fileID: 279687979654076489}
   m_Layer: 0
   m_Name: cubeAlocked
   m_TagString: Untagged
@@ -4128,6 +4229,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &279687979654076489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6944113415041229470}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &7170575282086954238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,6 +4304,7 @@ GameObject:
   - component: {fileID: 8853568993602727119}
   - component: {fileID: 2421624402954077042}
   - component: {fileID: 7366492889246756444}
+  - component: {fileID: 8004950697548135878}
   m_Layer: 0
   m_Name: piecePuzzle4locked
   m_TagString: Untagged
@@ -4258,6 +4373,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8004950697548135878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234458724217024745}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
 --- !u!1 &7512680793167115843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,6 +4398,7 @@ GameObject:
   - component: {fileID: 4087950257169328739}
   - component: {fileID: 6119016378199448450}
   - component: {fileID: 4589637163832346441}
+  - component: {fileID: 621180223665514936}
   m_Layer: 0
   m_Name: cubePlocked
   m_TagString: Untagged
@@ -4357,6 +4486,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &621180223665514936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512680793167115843}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &8283550996807706026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4368,6 +4510,7 @@ GameObject:
   - component: {fileID: 2507550898907568531}
   - component: {fileID: 1412579953129158935}
   - component: {fileID: 8462639328981049053}
+  - component: {fileID: 6552764068101208246}
   m_Layer: 0
   m_Name: HautChestModel
   m_TagString: Untagged
@@ -4436,6 +4579,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6552764068101208246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283550996807706026}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: ec95823120b5def4d965212a67b56685, type: 2}
 --- !u!1 &8306392485923508474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,6 +4826,7 @@ GameObject:
   - component: {fileID: 2484671283546096472}
   - component: {fileID: 4718930832725138200}
   - component: {fileID: 6638619636279918205}
+  - component: {fileID: 1133820522494370429}
   m_Layer: 0
   m_Name: piecePuzzle2locked
   m_TagString: Untagged
@@ -4738,6 +4895,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1133820522494370429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538857114656766417}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
 --- !u!1 &8558045461773640559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,6 +5143,7 @@ GameObject:
   - component: {fileID: 2845549695583870407}
   - component: {fileID: 9109032923437400686}
   - component: {fileID: 7782393602944066717}
+  - component: {fileID: 3638067643383764780}
   m_Layer: 0
   m_Name: cubeElocked
   m_TagString: Untagged
@@ -5060,6 +5231,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3638067643383764780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592882878915861452}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: a1280acb2727cf2469716708bc29d48f, type: 2}
 --- !u!1 &8700339924867817004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,6 +5255,7 @@ GameObject:
   - component: {fileID: 6316497890095155224}
   - component: {fileID: 8431618306817479903}
   - component: {fileID: 8726013099961250077}
+  - component: {fileID: 499956134293842101}
   m_Layer: 0
   m_Name: piecePuzzle3locked
   m_TagString: Untagged
@@ -5139,3 +5324,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &499956134293842101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700339924867817004}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc57c62e5a39c4ba3fda1bf418914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMat: {fileID: 2100000, guid: aa7b2f04806b8614594cee99f0145e6a, type: 2}
