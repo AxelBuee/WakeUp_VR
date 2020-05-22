@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Classe pour controler l'objet avec des mechaniques de tractions.
-/// Permet d'attirer un objet vers l'objet renseigne (TODO : suite a une interaction / une condition ).
+/// Permet d'attirer un objet vers l'objet renseigne.
 /// Pour l'instant, on en a besoin que pour attirer les billes avec la lampe torche.
 /// a terme il faudra separer les interactions avec les objets des conditions d'action des scripts.
 /// Ex : si on veut pouvoir attirer a nous les billes avec la lampe, une classe gere l'action traction
@@ -14,9 +14,20 @@ using UnityEngine;
 public class PullControl : MonoBehaviour
 {
     /// <summary>
-    /// GO vers ou va la force d'attraction.
+    /// numero du layer utilise pour attirer les objets avec la lampe
+    /// ce layer ne collisione pas, il capte seulement les raycasts
+    /// </summary>
+    static int sLayer = 15; //1 << 15;
+
+    /// <summary>
+    /// GO attracteur.
     /// </summary>
     public GameObject mPullerObj;
+
+    /// <summary>
+    /// Collider conenant le ParticleSystem sous le lit.
+    /// </summary>
+    public Collider mMarbleDeparturCollider;
 
     /// <summary>
     /// Pour arreter la fumee si la bille est trop loin de sa pos de depart.
@@ -25,6 +36,7 @@ public class PullControl : MonoBehaviour
 
     /// <summary>
     /// rayon du cercle autour du point d'origine partir de laquel on stop la fumee si la bille est dehors.
+    /// Si on veut eviter que la fumee s'arrete "sur un coup de chance"
     /// </summary>
     public float mStopSmokeRange;
 
@@ -41,9 +53,19 @@ public class PullControl : MonoBehaviour
     private string mDebugStr;
 
     /// <summary>
-    /// collider de l'objet a bouger et qui contient se script
+    /// collider de l'objet a bouger et qui contient ce script
     /// </summary>
-    private Collider mCollider;
+    private SphereCollider mCollider;
+
+    ///<summary>
+    /// rayon du sphereCollider captant les raycast de la lampe
+    ///<summary>
+    public float mGhostHitboxRadius;
+
+    /// <summary>
+    /// le rigidbody de l'objet a attirer, et qui est donc dans la hierarchi de this
+    /// </summary>
+    private Rigidbody mRigidbody;
 
     /// <summary>
     /// le hit contenant les infos sur le raycast touche par le raycast.
@@ -63,6 +85,7 @@ public class PullControl : MonoBehaviour
 
     private void Start()
     {
+        //inits des vals avec vals par defaut si besoin
         if (mStopSmokeRange <= 0)
         {
             mStopSmokeRange = 1f;
@@ -73,14 +96,38 @@ public class PullControl : MonoBehaviour
             mPullForceCoef = .1f;
         }
 
-        if (mParticleSystem == null)
+        if( mGhostHitboxRadius<= 0 )
         {
-            mParticleSystem = this.GetComponentInChildren<ParticleSystem>();
+            mGhostHitboxRadius = 0.05f;
         }
 
         if (mCollider == null)
         {
-            mCollider = gameObject.GetComponentInChildren<Collider>();
+            // on creer le GameObject qui contiendra la hitbox de la bille
+            var mColliderGoContainer = new GameObject("GhostHitbox");
+            mColliderGoContainer.layer = sLayer;
+            mColliderGoContainer.transform.SetParent( this.transform );
+            mColliderGoContainer.transform.localPosition = Vector3.zero;
+            mColliderGoContainer.transform.localRotation = Quaternion.identity;
+            mColliderGoContainer.transform.localScale = Vector3.one;
+
+            // set la parente
+            mCollider = mColliderGoContainer.AddComponent<SphereCollider>(); // le collider detecteur de raycast
+            var lTrueCollider = gameObject.GetComponent<Collider>() as BoxCollider; // le vrai collider de la bille
+
+            // set le collider
+            mCollider.center = lTrueCollider != null ? lTrueCollider.center : Vector3.zero ;
+            mCollider.radius = mGhostHitboxRadius;
+        }
+
+        if (mRigidbody == null)
+        {
+            mRigidbody = gameObject.GetComponentInChildren<Rigidbody>();
+        }
+
+        if (mMarbleDeparturCollider != null)
+        {
+            mParticleSystem = mMarbleDeparturCollider.gameObject.GetComponentInChildren<ParticleSystem>();
         }
 
         if( mPullerObj != null )
@@ -90,12 +137,38 @@ public class PullControl : MonoBehaviour
 
         mDebugStr = string.Empty;
 
-        mStartPos = this.transform.position;
+        mStartPos = mMarbleDeparturCollider.transform.position;
     }
 
     /// fixed update a cause de la addForce
     void FixedUpdate()
     {
+        // TODO c'est propre aux billes sous le lit, ca n'a rien a faire ici normalement...
+        // stop les particules de fumee des bille si elle s'est deplacee trop loin
+        if (mCollider != null)
+        {
+            var lDist = (transform.position - mStartPos).magnitude;
+
+            if (isOnDebug)
+            {
+                mDebugStr += "Dist = " + lDist + " | ";
+            }
+
+            if (lDist > mStopSmokeRange)
+            {
+                if (mParticleSystem != null)
+                {
+                    if( !mParticleSystem.isStopped ) // on veux bloquer la bille et particlesSys.stop une seule frame dans tout le jeu
+                    {
+                        mParticleSystem.Stop();
+                        mRigidbody.AddForce( - mRigidbody.velocity , ForceMode.Impulse );
+                        mMarbleDeparturCollider.enabled = false; // on empeche les billes de se rapprocher si elle sont sortie du lit
+                    }
+
+                }
+            }
+        }
+
         // a terme il faut un moyen de verifier si les conditions de l'enigme soient reuni pour fair l'action
         if (!areConditionsValid())
         {
@@ -111,12 +184,10 @@ public class PullControl : MonoBehaviour
 
             var lRaycastDirection = mPullerObj.transform.TransformDirection(Vector3.forward);
 
-            // layer 8 est utilise pour la lampe.
-            int layerMask = 1 << 8;
-
-            // on lance des spheres depuis mPullerObj, de rayon "1f", vers l'objet
-            // si l'objet est dans le rayon de la sphere au moment du cast, pas de colision. 
-            if (Physics.SphereCast(lOrigine, 1f, lRaycastDirection, out hit, Mathf.Infinity, layerMask))
+            // on lance des rayons depuis mPullerObj, vers sa direction frontaliere.
+            // si mPullerObj est dans le collider au moment du cast, la colision ne sera detectee.
+            var lLayerMask = 1 << sLayer;
+            if (Physics.Raycast(lOrigine, lRaycastDirection, out hit, Mathf.Infinity, lLayerMask) )
             {
                 // on a touche
                 //mHit = hit;
@@ -125,10 +196,11 @@ public class PullControl : MonoBehaviour
                     mDebugStr += "Did Hit : " + hit.collider.name + " | ";
                 }
 
-                // on applique la force de traction
-                if (hit.collider == mCollider)
+                // on applique la force de traction si mPullerObj pointe vers mMarbleDepartueCollider
+                if ( (mMarbleDeparturCollider != null && hit.collider == mMarbleDeparturCollider) 
+                    || hit.collider == mCollider )
                 {
-                    addPullForce(hit.rigidbody, -lRaycastDirection);
+                    addPullForce( mRigidbody, mPullerObj.transform.position - this.transform.position );
                 }
                 else
                 {
@@ -148,26 +220,6 @@ public class PullControl : MonoBehaviour
 
         }
 
-        // TODO c'est propre aux billes sous le lit, ca n'a rien a faire ici normalement...
-        // stop les particules de fumee des bille si elle s'est deplacee trop loin
-        if (mCollider != null)
-        {
-            var lDist = (transform.position - mStartPos).magnitude;
-
-            if (isOnDebug)
-            {
-                mDebugStr += "Dist = " + lDist + " | ";
-            }
-
-            if (lDist > mStopSmokeRange)
-            {
-                if (mParticleSystem != null)
-                {
-                    mParticleSystem.Stop();
-                }
-            }
-        }
-
         // print + reset debug
         if (isOnDebug)
         {
@@ -185,7 +237,9 @@ public class PullControl : MonoBehaviour
 
         // Draw a purple sphere at the transform's position
         Gizmos.color = new Color(0.5f, 0f, 0.5f, 0.5f);
-        Gizmos.DrawSphere(this.transform.position, 1f);
+
+        var lCollider = mMarbleDeparturCollider as SphereCollider;
+        Gizmos.DrawSphere( mMarbleDeparturCollider.transform.position, lCollider != null ? lCollider.radius : 0.01f );
 
     }
 
@@ -199,7 +253,7 @@ public class PullControl : MonoBehaviour
     {
         lForceDirection.y = 0f;
         lForceDirection = lForceDirection.normalized * mPullForceCoef;
-        pObjRigidbody.AddForce(lForceDirection, ForceMode.VelocityChange);
+        pObjRigidbody.AddForce(lForceDirection, ForceMode.Force);
     }
 
     /// <summary>
@@ -227,11 +281,18 @@ public class PullControl : MonoBehaviour
             return false;
         }
 
-        // la bille reste inerte si la lampe est eteinte
+        if( mMarbleDeparturCollider == null )
+        {
+            Debug.LogWarning("mMarbleDeparturCollider null dans pullControl de " + this.gameObject.name + ". Quel collider detecte qu'on pointe la lampe sous le lit?");
+            return false;
+        }
+
+        // la bille reste inerte si la lampe est eteinte ...
         if ( !mLight.transform.gameObject.activeSelf )
         {
             return false;
         }
+
         // un truc du genre
         // var lEventManager = get singleton / manager
         // return lEventManager.mFlashLightIsFounded
