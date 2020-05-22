@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043387376, g: 0.044548247, b: 0.05929023, a: 1}
+  m_IndirectSpecularColor: {r: 0.043393537, g: 0.044554476, b: 0.059299786, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 78e3be4ce64a1ae48891b7b6fbb020ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.414
+      value: 2.426
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 78e3be4ce64a1ae48891b7b6fbb020ad,
         type: 3}
@@ -842,6 +842,25 @@ Transform:
   m_Father: {fileID: 1488805536}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &801972186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 304685797830210385, guid: 6783df0fb12aca143882ba5627b37c74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1095733545825271357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &801972194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801972186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007, y: 0.025, z: 0.06}
+  m_Center: {x: 0, y: 0.04, z: 0.015}
 --- !u!1 &862310641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1636,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d8d82090294954db2316cecdcef86b, type: 3}
+--- !u!1 &1347432862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7728868392880152041, guid: c0926db20f979584d82dfb76230758d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7728868393548763963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1347432866
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347432862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: ca8a5fb0040da490da4f5476d38f5832, type: 3}
 --- !u!1001 &1352400742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3811,6 +3850,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 304685796293057065, guid: 6783df0fb12aca143882ba5627b37c74,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0466
+      objectReference: {fileID: 0}
     - target: {fileID: 304685796601547343, guid: 6783df0fb12aca143882ba5627b37c74,
         type: 3}
       propertyPath: m_IsActive
@@ -3839,7 +3883,7 @@ PrefabInstance:
     - target: {fileID: 304685797830210386, guid: 6783df0fb12aca143882ba5627b37c74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1715
+      value: 1.2052
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6783df0fb12aca143882ba5627b37c74, type: 3}
