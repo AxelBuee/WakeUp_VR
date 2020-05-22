@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043393537, g: 0.044554476, b: 0.059299786, a: 1}
+  m_IndirectSpecularColor: {r: 0.043387376, g: 0.044548247, b: 0.05929023, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1987,6 +1987,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9104885612581022528, guid: fab601467cce9e64a835598b112a3d15,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104885612581022528, guid: fab601467cce9e64a835598b112a3d15,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104885612581022528, guid: fab601467cce9e64a835598b112a3d15,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9104885612581022530, guid: fab601467cce9e64a835598b112a3d15,
         type: 3}
       propertyPath: m_Name
@@ -3468,7 +3483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6765015c7496d41abb8873e08b5312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseCaptioned: 1
+  CloseCaptioned: 0
   Clips:
   - {fileID: 8300000, guid: 90e446b109c1ec24c9287706dc4b4a70, type: 3}
   - {fileID: 8300000, guid: f3911c4c25860e0479c9834b1b29d1c6, type: 3}
@@ -3534,7 +3549,7 @@ MonoBehaviour:
   - {fileID: 796756447581437331}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4864
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -4239,10 +4254,63 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1488805536}
     m_Modifications:
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Size.x
+      value: 29.999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Size.y
+      value: 27.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Size.z
+      value: 96.15132
+      objectReference: {fileID: 0}
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.x
+      value: 0.03682538
+      objectReference: {fileID: 0}
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0000045105535
+      objectReference: {fileID: 0}
+    - target: {fileID: 835133259, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.z
+      value: 28.069183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Radius
+      value: 0.71730185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Height
+      value: 1.9120814
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0028150254
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.y
+      value: 0.000000033518212
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Center.z
+      value: 0.28951508
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102030093, guid: fbff08050118b6f4c8b353a650652a61, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1601288445718907104, guid: fbff08050118b6f4c8b353a650652a61,
         type: 3}
       propertyPath: m_Name
       value: ChestObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029380030629170378, guid: fbff08050118b6f4c8b353a650652a61,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5295292718901023572, guid: fbff08050118b6f4c8b353a650652a61,
         type: 3}

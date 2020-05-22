@@ -76,7 +76,7 @@ public class ManageSoclePuzzle : MonoBehaviour
             }
             else
             {
-                this.gameObject.SetActive(false);
+                //this.gameObject.SetActive(false);
             }
         }
     }
