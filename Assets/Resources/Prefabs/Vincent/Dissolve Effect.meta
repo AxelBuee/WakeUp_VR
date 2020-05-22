@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Prefabs/Vincent/Dissolve Effect.meta
 guid: b29c6a27334ac4d41b5fa5ea626bb4bf
 folderAsset: yes
+=======
+guid: caec450bcb065f44591e64e6575d591b
+>>>>>>> 8a31a4016f917c57efa9310cd0d31454c7362806:Assets/Resources/Prefabs/Globe/Globe.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
