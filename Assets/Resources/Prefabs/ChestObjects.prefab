@@ -544,7 +544,6 @@ GameObject:
   - component: {fileID: 3337234612624106509}
   - component: {fileID: 4489899305770374050}
   - component: {fileID: 7071019250108905358}
-  - component: {fileID: 1055591783871500055}
   - component: {fileID: 87404620169767256}
   m_Layer: 0
   m_Name: cube!locked
@@ -614,25 +613,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &1055591783871500055
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142236990137019606}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &87404620169767256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,7 +943,7 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
-  AcceptedType: cubeLetter
+  AcceptedType: CubeLetter
 --- !u!1 &2382950813576336390
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +955,6 @@ GameObject:
   - component: {fileID: 8388354456139698832}
   - component: {fileID: 1653916530054336686}
   - component: {fileID: 72113201344803121}
-  - component: {fileID: 2061899517957482994}
   - component: {fileID: 7706655703284687505}
   - component: {fileID: 1515190017720305520}
   - component: {fileID: 8347966704067655655}
@@ -1048,25 +1027,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &2061899517957482994
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382950813576336390}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &7706655703284687505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1182,7 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1251,7 +1211,6 @@ GameObject:
   - component: {fileID: 573540457919355716}
   - component: {fileID: 128794222972192443}
   - component: {fileID: 9168767808225375782}
-  - component: {fileID: 55981631832144066}
   - component: {fileID: 5832708408083043098}
   - component: {fileID: 823705769050785352}
   - component: {fileID: 3258172543434278595}
@@ -1324,25 +1283,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &55981631832144066
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2800040502448405264}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &5832708408083043098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1458,7 +1398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1474,7 +1414,6 @@ GameObject:
   - component: {fileID: 8901558905451885138}
   - component: {fileID: 289281189891922911}
   - component: {fileID: 2127452712997434680}
-  - component: {fileID: 1972832593586336602}
   - component: {fileID: 284998449785474241}
   m_Layer: 0
   m_Name: cubeWlocked
@@ -1544,25 +1483,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &1972832593586336602
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2966464115081324955}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &284998449785474241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1507,6 @@ GameObject:
   - component: {fileID: 5734288205092054353}
   - component: {fileID: 788481224998655633}
   - component: {fileID: 5557551409064871063}
-  - component: {fileID: 3873482600083976017}
   - component: {fileID: 4277107313539875248}
   - component: {fileID: 6728134129869306813}
   - component: {fileID: 2851604796294903897}
@@ -1660,25 +1579,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &3873482600083976017
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333374110812936031}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &4277107313539875248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1794,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1810,7 +1710,6 @@ GameObject:
   - component: {fileID: 7012437763970393938}
   - component: {fileID: 6480464431202497368}
   - component: {fileID: 6462134764498855620}
-  - component: {fileID: 4073372259657144326}
   - component: {fileID: 7820409370558854279}
   m_Layer: 0
   m_Name: cubeKlocked
@@ -1880,25 +1779,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &4073372259657144326
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609686924966040534}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7820409370558854279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,7 +2077,6 @@ GameObject:
   - component: {fileID: 8936172825640205745}
   - component: {fileID: 8433180302690663412}
   - component: {fileID: 981488593743852378}
-  - component: {fileID: 3885931334475577767}
   - component: {fileID: 4029380030629170378}
   - component: {fileID: 8284987659140474980}
   m_Layer: 0
@@ -2268,25 +2147,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &3885931334475577767
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4868301258566548018}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 8a018067ea935854b84a4e01728c45e1, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!64 &4029380030629170378
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3581,7 +3441,6 @@ GameObject:
   - component: {fileID: 6095294997803061964}
   - component: {fileID: 5061109770311628052}
   - component: {fileID: 1075802715562960381}
-  - component: {fileID: 1656250768809881298}
   - component: {fileID: 8311185598710151390}
   - component: {fileID: 4258297371539411304}
   - component: {fileID: 8852758894781096093}
@@ -3654,25 +3513,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &1656250768809881298
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5454583362409791791}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &8311185598710151390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3788,7 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3804,7 +3644,6 @@ GameObject:
   - component: {fileID: 4091391275348700977}
   - component: {fileID: 4150515403147372779}
   - component: {fileID: 5473115709955794133}
-  - component: {fileID: 9211239983261249367}
   - component: {fileID: 5762447596712965736}
   - component: {fileID: 5680822693229317321}
   - component: {fileID: 4264815406169182957}
@@ -3877,25 +3716,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &9211239983261249367
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5863550617655586297}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &5762447596712965736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4011,7 +3831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4027,7 +3847,6 @@ GameObject:
   - component: {fileID: 6911812019512490043}
   - component: {fileID: 8742814303369982574}
   - component: {fileID: 2015626697154531945}
-  - component: {fileID: 2234501923447868197}
   - component: {fileID: 2623101900623524258}
   m_Layer: 0
   m_Name: cubeUlocked
@@ -4097,25 +3916,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &2234501923447868197
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6768532490300028017}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2623101900623524258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4140,7 +3940,6 @@ GameObject:
   - component: {fileID: 3991279592345229127}
   - component: {fileID: 7953222980240626478}
   - component: {fileID: 3855118541183349499}
-  - component: {fileID: 6646710330698620254}
   - component: {fileID: 279687979654076489}
   m_Layer: 0
   m_Name: cubeAlocked
@@ -4210,25 +4009,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &6646710330698620254
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6944113415041229470}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &279687979654076489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4397,7 +4177,6 @@ GameObject:
   - component: {fileID: 9004467040340760441}
   - component: {fileID: 4087950257169328739}
   - component: {fileID: 6119016378199448450}
-  - component: {fileID: 4589637163832346441}
   - component: {fileID: 621180223665514936}
   m_Layer: 0
   m_Name: cubePlocked
@@ -4467,25 +4246,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &4589637163832346441
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7512680793167115843}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &621180223665514936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4603,7 +4363,6 @@ GameObject:
   - component: {fileID: 397662512642851888}
   - component: {fileID: 345121914437691630}
   - component: {fileID: 6474499522199565452}
-  - component: {fileID: 4849953019324197772}
   - component: {fileID: 2823052559807922021}
   - component: {fileID: 6748757203863827246}
   - component: {fileID: 8212357280128384705}
@@ -4676,25 +4435,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &4849953019324197772
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8306392485923508474}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &2823052559807922021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4919,7 +4659,6 @@ GameObject:
   - component: {fileID: 2999490656915228889}
   - component: {fileID: 2076665790356026982}
   - component: {fileID: 3804934626733121122}
-  - component: {fileID: 2784880325693173778}
   - component: {fileID: 6972366529087271390}
   - component: {fileID: 8111452895480725169}
   - component: {fileID: 5756664910811687558}
@@ -4992,25 +4731,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &2784880325693173778
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558045461773640559}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &6972366529087271390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5126,7 +4846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135e6d2aecbcc4ab60415080212f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketType: cubeLetter
+  SocketType: CubeLetter
   SocketedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5142,7 +4862,6 @@ GameObject:
   - component: {fileID: 6544278108762134717}
   - component: {fileID: 2845549695583870407}
   - component: {fileID: 9109032923437400686}
-  - component: {fileID: 7782393602944066717}
   - component: {fileID: 3638067643383764780}
   m_Layer: 0
   m_Name: cubeElocked
@@ -5212,25 +4931,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &7782393602944066717
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8592882878915861452}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b56671ce03bca1e4a8e51811265baa78, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3638067643383764780
 MonoBehaviour:
   m_ObjectHideFlags: 0
