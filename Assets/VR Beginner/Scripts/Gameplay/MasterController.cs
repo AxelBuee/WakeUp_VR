@@ -56,6 +56,10 @@ public class MasterController : MonoBehaviour
     
     List<XRBaseInteractable> m_InteractableCache = new List<XRBaseInteractable>(16);
 
+    /// le gameObject contenant le canvas du menu du jeu
+    GameObject mCanvasContainer_Go;
+
+
     void Awake()
     {
         s_Instance = this;
@@ -114,6 +118,9 @@ public class MasterController : MonoBehaviour
 
         if (m_Rig.TrackingOriginMode != TrackingOriginModeFlags.Floor)
             m_Rig.cameraYOffset = 1.8f;
+
+        mCanvasContainer_Go = GameObject.Find("CustomCCSystem");
+        if (mCanvasContainer_Go == null) {Debug.LogWarning("Pas de Menu dans cette scene ??");};
     }
 
     void RegisterDevices(InputDevice connectedDevice)
@@ -141,8 +148,35 @@ public class MasterController : MonoBehaviour
         
         RightTeleportUpdate();
         LeftTeleportUpdate();
+        MenuUpdate();
     }
 
+    /// Control UI menu. Inspired from Terleport function.
+    void MenuUpdate()
+    {
+        if( mCanvasContainer_Go == null )
+        {
+            return;
+        }
+
+        Vector2 axisRightInput;
+        Vector2 axisLeftInput;
+        m_RightInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisRightInput);
+        m_LeftInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisLeftInput);
+
+        if( axisRightInput.y < - 0.5f || axisLeftInput.y < - 0.5f )
+        {
+            //if( mCanvasContainer_Go.activeInHierarchy )
+            {
+                mCanvasContainer_Go.SetActive(true);
+            }
+        }
+        else
+        {
+                mCanvasContainer_Go.SetActive(false);
+        }
+    }
+    
     void RightTeleportUpdate()
     {
         Vector2 axisInput;
