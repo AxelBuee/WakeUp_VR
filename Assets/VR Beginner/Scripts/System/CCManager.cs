@@ -18,6 +18,23 @@ public class CCManager : MonoBehaviour
     public Canvas IndicatorCanvas;
     public GameObject IndicatorPrefab;
 
+    ///<Summary>
+    /// le vecteur Forward de la camera est multiplie par ce facteur
+    /// avant d'etre somme avec la position de la camera
+    // pour positionner le canvas.
+    ///<Summary>
+    public float mforwardCameraFactor = 0.5f;
+    
+    ///<Summary>
+    /// Entre 0 et 1. un petit interpolant rendra les deplacements du canvas plus doux.
+    /// si proche de 1, les mouvements sont saccades.
+    ///<Summary>
+    public float mLerpInterpolant_01 = 0.5f;
+
+    /// Ce material est necessaire pour applique un shader sur les renderers.
+    /// Il s'agit du shader qui empeche l'UI d'etre cachée derriere des objet 3D de la scene.
+    public Material mUiMenuMaterial;
+
     List<CCSource> m_Sources = new List<CCSource>();
     Camera m_Camera;
 
@@ -51,6 +68,21 @@ public class CCManager : MonoBehaviour
             indicator.SetActive(false);
             m_IndicatorQueue.Enqueue(indicator);
         }
+
+        // pour voir l'UI devant tout objets 3D
+        if( mUiMenuMaterial != null || ! mUiMenuMaterial.shader.name.Contains("Occlusion") )
+        {
+            var lUiRenderedElmts = GetComponentsInChildren<MaskableGraphic>(true);
+            Debug.Log(lUiRenderedElmts.Length);
+            for( int i = 0; i < lUiRenderedElmts.Length; i++ )
+            {
+                lUiRenderedElmts[i].material = mUiMenuMaterial;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Mauvais material assigne! Le menu apparaitra derriere les objs de la scene.");
+        }
     }
 
     void OnDisable()
@@ -68,7 +100,8 @@ public class CCManager : MonoBehaviour
         Vector3 cameraPosition = m_Camera.transform.position;
         Vector3 cameraForward = m_Camera.transform.forward;
 
-        IndicatorCanvas.transform.position = cameraPosition + cameraForward * 0.5f;
+        var lDesiredCanvasGlobalPos = cameraPosition + cameraForward * mforwardCameraFactor;
+        IndicatorCanvas.transform.position = Vector3.Lerp( IndicatorCanvas.transform.position, lDesiredCanvasGlobalPos, mLerpInterpolant_01 );
         IndicatorCanvas.transform.forward = cameraForward;
         
         for (int i = 0; i < m_Sources.Count; ++i)
