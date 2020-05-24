@@ -24,6 +24,9 @@ public class PullControl : MonoBehaviour
     /// </summary>
     public GameObject mPullerObj;
 
+    public GameObject otherSphere;
+
+
     /// <summary>
     /// Collider conenant le ParticleSystem sous le lit.
     /// </summary>
@@ -163,6 +166,7 @@ public class PullControl : MonoBehaviour
                         mParticleSystem.Stop();
                         mRigidbody.AddForce( - mRigidbody.velocity , ForceMode.Impulse );
                         mMarbleDeparturCollider.enabled = false; // on empeche les billes de se rapprocher si elle sont sortie du lit
+                        otherSphere.SetActive(false);
                     }
 
                 }
