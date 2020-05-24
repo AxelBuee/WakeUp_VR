@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// Master script that will handle reading some input on the controller and trigger special events like Teleport or
-/// activating the MagicTractorBeam
+/// activating the MagicTractorBeam  + Menu
 /// </summary>
 public class MasterController : MonoBehaviour
 {
@@ -30,7 +30,8 @@ public class MasterController : MonoBehaviour
 
     public MagicTractorBeam RightTractorBeam;
     public MagicTractorBeam LeftTractorBeam;
-    
+    public XRRayInteractor RightUiMenuInteractor;
+    public XRRayInteractor LeftUiMenuInteractor;
     XRRig m_Rig;
     
     InputDevice m_LeftInputDevice;
@@ -56,8 +57,8 @@ public class MasterController : MonoBehaviour
     
     List<XRBaseInteractable> m_InteractableCache = new List<XRBaseInteractable>(16);
 
-    /// le gameObject contenant le canvas du menu du jeu
-    GameObject mCanvasContainer_Go;
+    /// le gameObject contenant le component canvas du menu du jeu
+    GameObject mMenuCanvas_Go;
 
 
     void Awake()
@@ -119,8 +120,11 @@ public class MasterController : MonoBehaviour
         if (m_Rig.TrackingOriginMode != TrackingOriginModeFlags.Floor)
             m_Rig.cameraYOffset = 1.8f;
 
-        mCanvasContainer_Go = GameObject.Find("CustomCCSystem");
-        if (mCanvasContainer_Go == null) {Debug.LogWarning("Pas de Menu dans cette scene ??");};
+        mMenuCanvas_Go = CCManager.Instance.transform.Find("MenuCanvas").gameObject;
+        if (mMenuCanvas_Go == null)
+        {
+            Debug.LogWarning("Pas de Menu dans cette scene ??");
+        }
     }
 
     void RegisterDevices(InputDevice connectedDevice)
@@ -146,15 +150,18 @@ public class MasterController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
         
+        // active les UI controlleur si besoin seulement
+        
         RightTeleportUpdate();
         LeftTeleportUpdate();
         MenuUpdate();
+        InMenu_ControllersUpdate();
     }
 
-    /// Control UI menu. Inspired from Terleport function.
+    /// Control UI menu visibility. Inspired from TeleportUpdate function.
     void MenuUpdate()
     {
-        if( mCanvasContainer_Go == null )
+        if( mMenuCanvas_Go == null )
         {
             return;
         }
@@ -166,17 +173,41 @@ public class MasterController : MonoBehaviour
 
         if( axisRightInput.y < - 0.5f || axisLeftInput.y < - 0.5f )
         {
-            //if( mCanvasContainer_Go.activeInHierarchy )
-            {
-                mCanvasContainer_Go.SetActive(true);
-            }
+            mMenuCanvas_Go.SetActive(true);
+        } 
+        else if( !CCManager.Instance.mIsWaitingToPlay )
+        {
+            mMenuCanvas_Go.SetActive(false);
+        }
+    }
+
+    // active / desactive les GOs controller du XRRig si le menu est
+    // active ou desactive.
+    void InMenu_ControllersUpdate()
+    {
+        if( mMenuCanvas_Go.activeInHierarchy )
+        {
+            RightUiMenuInteractor.gameObject.SetActive( true );
+            LeftUiMenuInteractor.gameObject.SetActive( true );
+
+            RightDirectInteractor.gameObject.SetActive( false );
+            LeftDirectInteractor.gameObject.SetActive( false );
+            
+            RightTeleportInteractor.gameObject.SetActive( false );
+            LeftTeleportInteractor.gameObject.SetActive( false );
         }
         else
         {
-                mCanvasContainer_Go.SetActive(false);
+            RightDirectInteractor.gameObject.SetActive( true );
+            LeftDirectInteractor.gameObject.SetActive( true );
+            
+            RightTeleportInteractor.gameObject.SetActive( true );
+            LeftTeleportInteractor.gameObject.SetActive( true );
+
+            RightUiMenuInteractor.gameObject.SetActive( false );
+            LeftUiMenuInteractor.gameObject.SetActive( false );
         }
     }
-    
     void RightTeleportUpdate()
     {
         Vector2 axisInput;
