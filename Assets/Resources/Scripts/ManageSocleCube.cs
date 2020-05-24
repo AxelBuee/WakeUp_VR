@@ -52,15 +52,20 @@ public class ManageSocleCube : MonoBehaviour
     {
         if(other.gameObject.layer == 13)
         {
+            Debug.Log("allo le collider");
+
             GameObject cube = other.gameObject;
             if (cube.name == "cubeW")
             {
+                Debug.Log("aloW");
                 cube.SetActive(false);
                 cubeWlocked.SetActive(true);
                 socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
             }
             else if (cube.name == "cubeA")
             {
+                Debug.Log("aloA");
+
                 cube.SetActive(false);
                 cubeAlocked.SetActive(true);
                 socleCube.GetComponent<ObjectCount>().lockedPuzzleCount++;
@@ -101,7 +106,7 @@ public class ManageSocleCube : MonoBehaviour
             }
             else
             {
-                this.gameObject.SetActive(false);
+                //this.gameObject.SetActive(false);
             }
         }
     }
