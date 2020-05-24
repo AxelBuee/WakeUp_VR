@@ -826,6 +826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomCCSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4484689999667814779, guid: f49aa257a7c0c6c40976684f5e9d3b95,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1042830665}
     - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2453,6 +2458,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!20 &1042830665 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9104885613792965369, guid: fab601467cce9e64a835598b112a3d15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1217385697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093890689
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,11 +3231,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7432188662077176859, guid: fab601467cce9e64a835598b112a3d15,
-        type: 3}
-      propertyPath: m_MaxRaycastDistance
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9104885612581022528, guid: fab601467cce9e64a835598b112a3d15,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3308,11 +3314,6 @@ PrefabInstance:
     - target: {fileID: 9104885613468214722, guid: fab601467cce9e64a835598b112a3d15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221451788821105698, guid: fab601467cce9e64a835598b112a3d15,
-        type: 3}
-      propertyPath: m_MaxRaycastDistance
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
