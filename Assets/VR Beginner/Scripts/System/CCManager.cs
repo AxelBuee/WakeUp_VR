@@ -216,4 +216,10 @@ public class CCManager : MonoBehaviour
     {
         s_Instance.m_Sources.Remove(source);
     }
+
+    /// mIsWaitingToPlay = false -> comportement UI desactivee par defaut
+    public void PlayBtt_OnClick()
+    {
+        mIsWaitingToPlay = false;
+    }
 }
