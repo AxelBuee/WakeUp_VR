@@ -31,10 +31,16 @@ public class CCManager : MonoBehaviour
     ///<Summary>
     public float mLerpInterpolant_01 = 0.5f;
 
-    /// Ce material est necessaire pour applique un shader sur les renderers.
+    /// Ce material est necessaire pour appliquer un shader sur les MaskableGraphic.
     /// Il s'agit du shader qui empeche l'UI d'etre cachée derriere des objet 3D de la scene.
     public Material mUiMenuMaterial;
 
+    /// true : force l'UI a s'afficher pour commencer a jouer
+    /// false : on a deja commencer le jeu, comportement habituel quant a l'affichage du menu
+    public bool mIsWaitingToPlay;
+
+    /// le bouton "Play" dans le canvas
+    private GameObject mPlayBtt;
     List<CCSource> m_Sources = new List<CCSource>();
     Camera m_Camera;
 
@@ -70,10 +76,9 @@ public class CCManager : MonoBehaviour
         }
 
         // pour voir l'UI devant tout objets 3D
-        if( mUiMenuMaterial != null || ! mUiMenuMaterial.shader.name.Contains("Occlusion") )
+        if( mUiMenuMaterial != null || mUiMenuMaterial.shader.name != "CustomDepthOcclusion" )
         {
             var lUiRenderedElmts = GetComponentsInChildren<MaskableGraphic>(true);
-            Debug.Log(lUiRenderedElmts.Length);
             for( int i = 0; i < lUiRenderedElmts.Length; i++ )
             {
                 lUiRenderedElmts[i].material = mUiMenuMaterial;
@@ -81,8 +86,14 @@ public class CCManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Mauvais material assigne! Le menu apparaitra derriere les objs de la scene.");
+            Debug.LogWarning("Mauvais material assigne? Le menu apparaitra derriere les objs de la scene.");
         }
+
+        mIsWaitingToPlay = true; // pour voir l'UI au demarrage du jeu
+
+        mPlayBtt = GameObject.Find("PlayBtt");
+
+        DontDestroyOnLoad(this);
     }
 
     void OnDisable()
@@ -97,6 +108,20 @@ public class CCManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // active l'UI menu au demarage du jeu.
+        if( mIsWaitingToPlay )
+        {
+            IndicatorCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            if( mPlayBtt != null)
+            {
+
+                mPlayBtt.SetActive(false);
+            }
+        }
+
         Vector3 cameraPosition = m_Camera.transform.position;
         Vector3 cameraForward = m_Camera.transform.forward;
 
