@@ -222,4 +222,8 @@ public class CCManager : MonoBehaviour
     {
         mIsWaitingToPlay = false;
     }
+    public void QuitBtt_OnClick()
+    {
+        Application.Quit();
+    }
 }
