@@ -12,6 +12,11 @@ using UnityEngine.SceneManagement;
 [DefaultExecutionOrder(-999)]
 public class CCManager : MonoBehaviour
 {
+    [SerializeField] public Animator animator;//animator du perso
+    [SerializeField] public GameObject door; //porte a fermer
+    [SerializeField] public Light doorLight; //lumièrer a éteindre
+    [SerializeField] public GameObject kidLight; //not object but realy light
+
     static CCManager s_Instance;
     public static CCManager Instance => s_Instance;
 
@@ -235,11 +240,38 @@ public class CCManager : MonoBehaviour
         SceneManager.LoadScene( "Level1", LoadSceneMode.Single); 
     }
 
+    public void runGame(){
+        
+        //lancer l'anim du perso et attendre qu'elle se finisse
+        animator.SetBool("playPressed", true);
+
+        //fermer la porte
+        StartCoroutine("waitAnnimationAndClose");
+
+        //éteindre la lumière //allumer la veilleuse 
+        StartCoroutine("lightOFF");
+    }
+
+    IEnumerator lightOFF(){
+            float steps = 0.2f;
+            doorLight.intensity=5;
+            while(doorLight.intensity > 0.5){
+                yield return new WaitForSeconds(0.1f);
+                doorLight.intensity -=  steps;
+            }
+            kidLight.SetActive(true);
+    }
+    IEnumerator waitAnnimationAndClose(){
+        yield return new WaitForSeconds(6f);
+        HingeJoint hinge = door.GetComponent<HingeJoint>();
+        hinge.useSpring = true;
+        LoadLevel1();
+    }
     /// mIsWaitingToPlay = false -> comportement UI desactivee par defaut
     public void PlayBtt_OnClick()
     {
         mIsWaitingToPlay = false;
-        LoadLevel1();
+        runGame();
     }
     public void QuitBtt_OnClick()
     {
