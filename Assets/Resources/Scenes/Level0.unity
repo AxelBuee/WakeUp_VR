@@ -821,6 +821,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 3661435801834076954, guid: f49aa257a7c0c6c40976684f5e9d3b95,
+        type: 3}
+      propertyPath: mIsWaitingToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3869209808529125955, guid: f49aa257a7c0c6c40976684f5e9d3b95,
         type: 3}
       propertyPath: m_Name

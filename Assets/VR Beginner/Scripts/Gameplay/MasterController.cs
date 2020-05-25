@@ -185,6 +185,13 @@ public class MasterController : MonoBehaviour
     // active ou desactive.
     void InMenu_ControllersUpdate()
     {
+        if( mMenuCanvas_Go == null )
+        {
+            RightUiMenuInteractor.gameObject.SetActive( false );
+            LeftUiMenuInteractor.gameObject.SetActive( false );
+            return;
+        }
+
         if( mMenuCanvas_Go.activeInHierarchy )
         {
             RightUiMenuInteractor.gameObject.SetActive( true );

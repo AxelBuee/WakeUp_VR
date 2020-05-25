@@ -89,9 +89,13 @@ public class CCManager : MonoBehaviour
             Debug.LogWarning("Mauvais material assigne? Le menu apparaitra derriere les objs de la scene.");
         }
 
-        mIsWaitingToPlay = true; // pour voir l'UI au demarrage du jeu
-
         mPlayBtt = GameObject.Find("PlayBtt");
+
+        if( !mIsWaitingToPlay ) // on vient pas d'ouvrir le jeu alors
+        {
+            mPlayBtt.SetActive( false );
+        }
+
 
         DontDestroyOnLoad(this);
     }
