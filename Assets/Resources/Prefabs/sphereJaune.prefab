@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5377179009066096196}
   - component: {fileID: 5377179009066096221}
   m_Layer: 0
-  m_Name: sphereJaune 1
+  m_Name: sphereJaune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,8 +218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPullerObj: {fileID: 0}
+  otherSphere: {fileID: 0}
   mMarbleDeparturCollider: {fileID: 0}
   mStopSmokeRange: 1
   mPullForceCoef: 13
-  isOnDebug: 1
+  isOnDebug: 0
   mGhostHitboxRadius: 0
