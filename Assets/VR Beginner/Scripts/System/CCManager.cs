@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// The CCManager will track each CCSource in the scene and hide/display/align them based on the view direction and
@@ -112,6 +113,13 @@ public class CCManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if( IndicatorCanvas.worldCamera == null || m_Camera == null)
+        {
+            IndicatorCanvas.worldCamera = Camera.main;
+            m_Camera = Camera.main;
+            return;
+        }
+
         // active l'UI menu au demarage du jeu.
         if( mIsWaitingToPlay )
         {
@@ -221,10 +229,17 @@ public class CCManager : MonoBehaviour
         s_Instance.m_Sources.Remove(source);
     }
 
+    public void LoadLevel1()
+    {
+        IndicatorCanvas.worldCamera = null;
+        SceneManager.LoadScene( "Level1", LoadSceneMode.Single); 
+    }
+
     /// mIsWaitingToPlay = false -> comportement UI desactivee par defaut
     public void PlayBtt_OnClick()
     {
         mIsWaitingToPlay = false;
+        LoadLevel1();
     }
     public void QuitBtt_OnClick()
     {

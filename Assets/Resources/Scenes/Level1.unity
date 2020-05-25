@@ -1679,6 +1679,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomCCSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 3869209808529125955, guid: f49aa257a7c0c6c40976684f5e9d3b95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4484689999667814779, guid: f49aa257a7c0c6c40976684f5e9d3b95,
         type: 3}
       propertyPath: m_Camera
