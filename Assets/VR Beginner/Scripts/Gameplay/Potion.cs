@@ -37,6 +37,11 @@ public class Potion : MonoBehaviour
     bool m_Breakable;
     float m_StartingFillAmount;
 
+    private bool rescaled = false;
+    private Vector3 curr_scale;
+    private Vector3 target_scale;
+    public float scaleDuration = 3f;
+
     void OnEnable()
     {
         particleSystemLiquid.Stop();
@@ -70,6 +75,9 @@ public class Potion : MonoBehaviour
         m_AudioSource.loop = true;
 
         m_UniqueId = NextFreeUniqueId++;
+
+        curr_scale = GameObject.Find("XR_Rig").transform.localScale;
+        target_scale = new Vector3(.3f, .3f, .3f);
     }
 
     void OnDestroy()
@@ -86,6 +94,12 @@ public class Potion : MonoBehaviour
             {
                 particleSystemLiquid.Play();
                 m_AudioSource.Play();
+                if (!rescaled)
+                {
+                    StartCoroutine(ScaleObject());
+                    GameObject.Find("Camera Offset").transform.localPosition = new Vector3(0.35f, 0, -0.37f);
+                    rescaled = true;
+                }
             }
             
             fillAmount -= 0.1f * Time.deltaTime;
@@ -116,7 +130,19 @@ public class Potion : MonoBehaviour
         m_MaterialPropertyBlock.SetFloat("LiquidFill", fillAmount);
         MeshRenderer.SetPropertyBlock(m_MaterialPropertyBlock);
     }
+    IEnumerator ScaleObject()
+    {
+        float scaleDuration = 3;                                //animation duration in seconds
+        //Vector3 actualScale = transform.localScale;             // scale of the object at the begining of the animation
+        //Vector3 targetScale = new Vector3(0.5f, 0.5f, 0.5f);     // scale of the object at the end of the animation
 
+        for (float t = 0; t < 1; t += Time.deltaTime / scaleDuration)
+        {
+            GameObject.Find("XR_Rig").transform.localScale = Vector3.Lerp(curr_scale, target_scale, t);
+            GameObject.Find("Locomotion System").transform.localScale = Vector3.Lerp(curr_scale, target_scale, t);
+            yield return null;
+        }
+    }
     public void ToggleBreakable(bool breakable)
     {
         m_Breakable = breakable;

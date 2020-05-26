@@ -229,16 +229,19 @@ public class MasterController : MonoBehaviour
             m_RightController.Select();
         }
 
+        if( RightTractorBeam != null)
+        {
+            if (axisInput.y <= -0.5f)
+            {
+                if (!RightTractorBeam.IsTracting)
+                    RightTractorBeam.StartTracting();
+            }
+            else if (RightTractorBeam.IsTracting)
+            {
+                RightTractorBeam.StopTracting();
+            }
+        }
         
-        if (axisInput.y <= -0.5f)
-        {
-            if(!RightTractorBeam.IsTracting)
-                RightTractorBeam.StartTracting();
-        }
-        else if(RightTractorBeam.IsTracting)
-        {
-            RightTractorBeam.StopTracting();
-        }
 
         //if the right animator is null, we try to get it. It's not the best performance wise but no other way as setup
         //of the model by the Interaction Toolkit is done on the first update.
@@ -271,15 +274,20 @@ public class MasterController : MonoBehaviour
             m_LeftController.Select();
         }
         
-        if (axisInput.y <= -0.5f)
+        if(LeftTractorBeam != null)
         {
-            if(!LeftTractorBeam.IsTracting)
-                LeftTractorBeam.StartTracting();
+            Debug.Log("test");
+            if (axisInput.y <= -0.5f)
+            {
+                if (!LeftTractorBeam.IsTracting)
+                    LeftTractorBeam.StartTracting();
+            }
+            else if (LeftTractorBeam.IsTracting)
+            {
+                LeftTractorBeam.StopTracting();
+            }
         }
-        else if(LeftTractorBeam.IsTracting)
-        {
-            LeftTractorBeam.StopTracting();
-        }
+        
         
         //if the left animator is null, we try to get it. It's not the best performance wise but no other way as setup
         //of the model by the Interaction Toolkit is done on the first update.
