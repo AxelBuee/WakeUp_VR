@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3548,90 +3548,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d8d82090294954db2316cecdcef86b, type: 3}
---- !u!1001 &1332716284
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3661435801834076954, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: mIsWaitingToPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3869209808529125955, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_Name
-      value: CustomCCSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 3869209808529125955, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484689999667814779, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 9104885612283038725}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526966211239156836, guid: f49aa257a7c0c6c40976684f5e9d3b95,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f49aa257a7c0c6c40976684f5e9d3b95, type: 3}
 --- !u!64 &1347432866
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11784,9 +11700,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.049023, y: 15.530748, z: 15.247027}
   m_Center: {x: -15.365718, y: -4.2996078, z: 6.8755264}
---- !u!20 &9104885612283038725 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3982563490807238657, guid: 0796dec1241f2fe4ba1ca9fbe5987857,
-    type: 3}
-  m_PrefabInstance: {fileID: 6759515113191307863}
-  m_PrefabAsset: {fileID: 0}

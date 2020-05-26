@@ -103,7 +103,7 @@ public class CCManager : MonoBehaviour
         }
 
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this); // OLD en vu de garder le menu d'une scene a l'autre.
     }
 
     void OnDisable()
